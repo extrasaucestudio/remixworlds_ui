@@ -1,0 +1,256 @@
+<html>
+    <head>
+        <title>Waxio V2</title>
+        
+    </head>
+    <body>
+        <script>
+            // configuring Sidebar structure
+const structure = [
+    {
+        id: "logo",
+        type: "customHTML",
+        css: "sidebar_template_a__logo",
+        html: "<img src='https://snippet.dhtmlx.com/codebase/data/common/img/01/logo_exam_system.svg'>" //todo заменить путь к лого
+    },
+    {
+        type: "separator"
+    },
+    {
+        id: "dashboard",
+        value: "Dashboard",
+        icon: "mdi mdi-view-dashboard"
+    },
+    {
+        id: "statistics",
+        value: "Statistics",
+        icon: "mdi mdi-chart-line"
+    },
+    {
+        id: "reports",
+        value: "Reports",
+        icon: "mdi mdi-file-chart"
+    },
+    {
+        type: "separator"
+    },
+    {
+        id: "posts",
+        value: "Posts",
+        icon: "mdi mdi-square-edit-outline",
+        items: [
+            {
+                id: "addPost",
+                value: "New Post",
+                icon: "mdi mdi-plus"
+            },
+            {
+                id: "allPost",
+                value: "Posts",
+                icon: "mdi mdi-view-list"
+            },
+            {
+                id: "categoryPost",
+                value: "Category",
+                icon: "mdi mdi-tag"
+            }
+        ]
+    },
+    {
+        id: "pages",
+        value: "Pages",
+        icon: "mdi mdi-file-outline",
+        items: [
+            {
+                id: "addPage",
+                value: "New Page",
+                icon: "mdi mdi-plus"
+            },
+            {
+                id: "allPage",
+                value: "Pages",
+                icon: "mdi mdi-view-list"
+            },
+            {
+                id: "categoryPages",
+                value: "Category",
+                icon: "mdi mdi-tag"
+            }
+        ]
+    },
+    {
+        id: "messages",
+        value: "Messages",
+        count: 18,
+        icon: "mdi mdi-email-mark-as-unread"
+    },
+    {
+        id: "media",
+        value: "Media",
+        icon: "mdi mdi-folder-multiple-image"
+    },
+    {
+        id: "links",
+        value: "Links",
+        icon: "mdi mdi-link"
+    },
+    {
+        id: "comments",
+        value: "Comments",
+        icon: "mdi mdi-comment-multiple-outline",
+        count: "118",
+        countColor: "primary",
+        items: [
+            {
+                id: "myComments",
+                value: "My Comments",
+                count: 15,
+                icon: "mdi mdi-account",
+            },
+            {
+                id: "allComments",
+                value: "All Comments",
+                count: 103,
+                countColor: "primary",
+                icon: "mdi mdi-comment-multiple-outline",
+            },
+        ]
+    },
+    {
+        type: "spacer"
+    },
+    {
+        type: "separator"
+    },
+    {
+        id: "notification",
+        value: "Notification",
+        count: 25,
+        icon: "mdi mdi-bell",
+        countColor: "primary"
+    },
+    {
+        id: "configuration",
+        value: "Configuration",
+        icon: "mdi mdi-settings",
+        items: [
+            {
+                id: "myAccount",
+                value: "My Account",
+                icon: "mdi mdi-account-settings"
+            },
+            {
+                id: "general",
+                value: "General Configuration",
+                icon: "mdi mdi-tune"
+            }
+        ]
+    }
+];
+
+// Layout initialization
+const layout = new dhx.Layout("layout", {
+    cols: [
+        { id: "sidebar", width: "content" },
+        {
+            type: "space",
+            rows: [
+                {}
+            ]
+        }
+    ]
+});
+
+// Sidebar initialization
+const sidebar = new dhx.Sidebar(null, {
+    css: "sidebar_template_a"
+});
+// loading the structure into Sidebar
+sidebar.data.parse(structure);
+
+// attaching Sidebar into a Layout cell
+layout.getCell("sidebar").attach(sidebar);
+
+        </script>
+        <div id="layout" style="height: 100%;"></div>
+
+        <!-- css template for DHTMLX Sidebar -->
+        <!-- the latest version is available here: https://snippet.dhtmlx.com/sidebar_template_a -->
+        <!-- you can find more css templates here: https://dhtmlx.com/docs/products/dhtmlxSuite/styling -->
+        <style>
+            .sidebar_template_a.dhx_sidebar {
+                background-color: #30333d;
+            }
+        
+            .sidebar_template_a .dhx_sidebar__item--separator {
+                background: rgba(255, 255, 255, 0.1);
+            }
+        
+            .sidebar_template_a .dhx_sidebar-button {
+                color: #fff;
+            }
+        
+            .sidebar_template_a .dhx_sidebar-button.dhx_sidebar-button--active,
+            .sidebar_template_a .dhx_sidebar-button:active {
+                color: #65a6e7;
+            }
+        
+            .sidebar_template_a .dhx_sidebar-button.dhx_sidebar-button--active .dhx_sidebar-button__icon,
+            .sidebar_template_a .dhx_sidebar-button:active .dhx_sidebar-button__icon {
+                color: inherit;
+            }
+        
+            .sidebar_template_a .dhx_sidebar-button__icon {
+                color: rgba(255, 255, 255, 0.7);
+            }
+        
+            .sidebar_template_a--context-menu .dhx_menu {
+                background-color: #30333d;
+            }
+        
+            .sidebar_template_a--context-menu .dhx_menu-button {
+                color: #fff;
+            }
+        
+            .sidebar_template_a--context-menu .dhx_menu-button:hover:not(:disabled) {
+                background-color: rgba(0, 0, 0, 0.07);
+            }
+        
+            .sidebar_template_a--context-menu .dhx_menu-button--active:not(:disabled),
+            .sidebar_template_a--context-menu .dhx_menu-button:active:not(:disabled),
+            .sidebar_template_a--context-menu .dhx_menu-button:focus:not(:disabled) {
+                color: #65a6e7;
+                background-color: rgba(0, 0, 0, 0.15);
+            }
+        
+            .sidebar_template_a--context-menu .dhx_menu-button--active:not(:disabled) .dhx_menu-button__icon,
+            .sidebar_template_a--context-menu .dhx_menu-button:active:not(:disabled) .dhx_menu-button__icon,
+            .sidebar_template_a--context-menu .dhx_menu-button:focus:not(:disabled) .dhx_menu-button__icon {
+                color: inherit;
+            }
+        
+            .sidebar_template_a--context-menu .dhx_menu-button__icon {
+                color: rgba(255, 255, 255, 0.7);
+            }
+        
+            .sidebar_template_a__logo {
+                margin: 40px auto 20px;
+            }
+        </style>
+        <!-- end of code for sidebar_template_a -->
+        
+        <!-- icons -->
+        <link rel="stylesheet" href="//cdn.materialdesignicons.com/4.0.96/css/materialdesignicons.min.css" />
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
