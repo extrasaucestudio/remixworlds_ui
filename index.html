@@ -173,7 +173,8 @@
     right: 35px;
   }
 } 
- /* The Overlay2 (background) */
+ 
+/* The Overlay2 (background) */
  .overlay2 {
   /* Height & width depends on how you want to reveal the overlay (see JS below) */   
   height: 100%;
@@ -281,6 +282,73 @@
 @media screen and (max-height: 450px) {
   .overlay3 a {font-size: 20px}
   .overlay3 .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+} 
+
+/* The overlay4 (background) */
+.overlay4 {
+  /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+  height: 100%;
+  width: 0;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  background-color: rgb(0,0,0); /* Black fallback color */
+  background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the content inside the overlay */
+.overlay-content4 {
+  position: relative;
+  top: 25%; /* 25% from the top */
+  width: 100%; /* 100% width */
+  text-align: center; /* Centered text/links */
+  margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+/* The navigation links inside the overlay */
+.overlay4 a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 24px;
+  color: #818181;
+   display: block; /* Display block instead of inline */
+  transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+/* The navigation links inside the overlay */
+.overlay4 p {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #ffffff;
+   display: block; /* Display block instead of inline */
+  transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+/* When you mouse over the navigation links, change their color */
+.overlay4 a:hover, .overlay4 a:focus {
+  color: #f1f1f1;
+}
+
+/* Position the close button (top right corner) */
+.overlay4 .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (max-height: 450px) {
+  .overlay4 a {font-size: 20px}
+  .overlay4 .closebtn {
     font-size: 40px;
     top: 15px;
     right: 35px;
@@ -423,7 +491,7 @@ neftyblocks-market {
     <!-- Overlay content -->
     <div class="overlay-content2">
       
-      <a target="iframe" href="waxquest.html">Soon</a>
+      <a target="iframe" href="#">WaxQuest Soon</a>
 
     </div>
   
@@ -431,24 +499,42 @@ neftyblocks-market {
 
    <!-- The overlay -->
  <div id="myNav3" class="overlay3">
-
     <!-- Button to close the overlay navigation -->
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav3()">&times;</a>
-  
     <center><img style="display: width: 60px; height: 60px; margin-top: 15px; margin-left: 0px; margin-right: 0px" src="files/images/logo-freecity.png"></center>
-    
     <!-- Overlay content -->
     <div class="overlay-content3">
-        
         <neftyblocks-market collection="freecitygame"></neftyblocks-market>
         <script type="module" src="https://cdn.jsdelivr.net/npm/@neftyblocks/market@latest"></script>
     </div>
-  
   </div>
 
+  <!-- The overlay -->
+ <div id="myNav4" class="overlay4">
+
+  <!-- Button to close the overlay navigation -->
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav4()">&times;</a>
+
+  <!-- Overlay content -->
+  <div class="overlay-content4">
+    <p><strong>WAX Waxio DashBoard</strong>
+      <br><br>
+      WAX Gaming Dashboard to manage multiple<br>game and dApp on the same page.
+      <br><br>
+      Earn RMX every minute you use the FREE WAX Waxio Dashboard.
+      <br><br>
+      <a target="iframe" href="https://waxio.io/?ref=freecitygame">See Waxio.io</a>
+    </p>
+    
+    
+
+  </div>
+
+</div>
   <!-- Use any element to open/show the overlay navigation menu 
 <span onclick="openNav()">open</span> 
 -->
+
   
 <script>
     /* Open when someone clicks on the span element */
@@ -481,6 +567,17 @@ function openNav3() {
 /* Close when someone clicks on the "x" symbol inside the overlay */
 function closeNav3() {
   document.getElementById("myNav3").style.width = "0%";
+} 
+</script>
+<script>
+  /* Open when someone clicks on the span element */
+function openNav4() {
+document.getElementById("myNav4").style.width = "100%";
+}
+
+/* Close when someone clicks on the "x" symbol inside the overlay */
+function closeNav4() {
+document.getElementById("myNav4").style.width = "0%";
 } 
 </script>
 
