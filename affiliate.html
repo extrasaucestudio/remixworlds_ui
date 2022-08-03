@@ -58,9 +58,10 @@
           <img id="login" onclick=login() style="display: block; width: 75px; height: 75px; margin-top: 0px; margin-left: auto; margin-right: auto" src="files/wax.svg">
       <span id="username"></span>            
             <br><br>        
-            
+            <span id="response"></span>
             <br><br>
-            
+            <p hidden="hidden" id="current"></p>
+  <input hidden="hidden" id="wallet">  
 <script>
   //document.write('<strong>You referral link:</strong><br>' + referralurl + '<br>');
   document.write(sessionStorage.getItem('referralurl'));
