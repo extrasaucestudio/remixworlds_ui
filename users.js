@@ -3,6 +3,7 @@ var url = new URL(url_string);
 var ref = url.searchParams.get("ref") || 'freecitygame';
 var toiframe = url.searchParams.get("url") || 'go.html';
 
+var username = document.write(sessionStorage.getItem('username')) || 'xxx';
 
 //var wallet = url.searchParams.get("wallet") || 'waxdashwaxio';
 //var wallet = ${wax.userAccount};
