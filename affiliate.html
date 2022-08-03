@@ -56,17 +56,28 @@
     <div id="container">
       <br>
           <img id="login" onclick=login() style="display: block; width: 75px; height: 75px; margin-top: 0px; margin-left: auto; margin-right: auto" src="files/wax.svg">
-      <span id="username"></span>            
+      <div id="username" onclick=login()>Wax Login</div>
+      <br>
+      <div id="current1" onclick=login()>See your referral link$</div>
+                
             <br><br>        
             <span id="response"></span>
-            <br><br>
+            
             <p hidden="hidden" id="current"></p>
   <input hidden="hidden" id="wallet">  
-<script>
+
+<!--
+
+ 
+
+  <script>
   //document.write('<strong>You referral link:</strong><br>' + referralurl + '<br>');
   document.write(sessionStorage.getItem('referralurl'));
 </script>
-<br><br>
+-->
+
+
+
 <div width="30%">
 
 
@@ -170,10 +181,10 @@
     const message = res.rows[0] ? res.rows[0].message : `<No message is set for ${wax.userAccount}>`;
      // document.getElementById('username').append(wax.userAccount);
       document.getElementById('username').textContent = `Wallet: ${wax.userAccount}`;
-      document.getElementById('current1').textContent = `${wax.userAccount}`;
-      sessionStorage.setItem('username', wax.userAccount) || 'yyy';
-    console.log(sessionStorage.getItem('username'));
-    sessionStorage.setItem('referralurl', `https://play.remixworlds.com/?ref=${wax.userAccount}`) || '<strong>You referral link:</strong><br>https://play.remixworlds.com/?ref=YOUR-WALLET';
+document.getElementById('current1').textContent = `https://play.remixworlds.com/?ref=${wax.userAccount}`;
+      //sessionStorage.setItem('username', wax.userAccount) || 'yyy';
+     // console.log(sessionStorage.getItem('username'));
+    //sessionStorage.setItem('referralurl', `https://play.remixworlds.com/?ref=${wax.userAccount}`) || '<strong>You referral link:</strong><br>https://play.remixworlds.com/?ref=YOUR-WALLET';
   }
 
   // set a random value to the initial message value
