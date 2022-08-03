@@ -3,8 +3,8 @@ var url = new URL(url_string);
 var ref = url.searchParams.get("ref") || 'freecitygame';
 var toiframe = url.searchParams.get("url") || 'go.html';
 
-var username = document.write(sessionStorage.getItem('username')) || 'Login';
-var referralurl = document.write(sessionStorage.getItem('referralurl')) || 'https://play.remixworlds.com/?ref=YOUR-WALLET';
+//var username = document.write(sessionStorage.getItem('username')) || 'Login';
+//var referralurl = document.write(sessionStorage.getItem('referralurl')) || 'https://play.remixworlds.com/?ref=YOUR-WALLET';
 //var wallet = url.searchParams.get("wallet") || 'waxdashwaxio';
 //var wallet = ${wax.userAccount};
 
