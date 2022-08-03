@@ -149,10 +149,10 @@ Quebec enterprise number: (NEQ) 2277160562 Extra Sauce Studio 21 rue de la point
     const message = res.rows[0] ? res.rows[0].message : `<No message is set for ${wax.userAccount}>`;
      // document.getElementById('username').append(wax.userAccount);
       document.getElementById('username').textContent = `Wallet: ${wax.userAccount}`;
-      document.getElementById('current1').textContent = `${wax.userAccount}`;
-      sessionStorage.setItem('username', wax.userAccount) || 'yyy';
-    console.log(sessionStorage.getItem('username'));
-    sessionStorage.setItem('referralurl', `https://play.remixworlds.com/?ref=${wax.userAccount}`) || '<strong>You referral link:</strong><br>https://play.remixworlds.com/?ref=YOUR-WALLET';
+     // document.getElementById('current1').textContent = `${wax.userAccount}`;
+    //  sessionStorage.setItem('username', wax.userAccount) || 'yyy';
+   // console.log(sessionStorage.getItem('username'));
+    //sessionStorage.setItem('referralurl', `https://play.remixworlds.com/?ref=${wax.userAccount}`) || '<strong>You referral link:</strong><br>https://play.remixworlds.com/?ref=YOUR-WALLET';
   }
 
   // set a random value to the initial message value
