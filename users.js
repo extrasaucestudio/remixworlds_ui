@@ -4,7 +4,7 @@ var ref = url.searchParams.get("ref") || 'freecitygame';
 var toiframe = url.searchParams.get("url") || 'go.html';
 
 var username = document.write(sessionStorage.getItem('username')) || '';
-
+var referralurl = document.write(sessionStorage.getItem('referralurl')) || 'xxx';
 //var wallet = url.searchParams.get("wallet") || 'waxdashwaxio';
 //var wallet = ${wax.userAccount};
 
