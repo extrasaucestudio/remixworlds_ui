@@ -11,6 +11,12 @@
         <script type="text/javascript" src="files/codebase/suite.js"></script>
 		<link rel="stylesheet" href="files/codebase/suite.css">
 		<link rel="stylesheet" href="files/index.css">
+    <link rel="preload" href="files/Site.min.css" as="style">
+    <link rel="reload" href="files/style.min.css" as="style">
+        <link rel="preload" href="files/sso-theme.min.css" as="style">
+    <link href="files/Site.min.css" rel="stylesheet" type="text/css">
+    <link href="files/style.min.css" rel="stylesheet" type="text/css">
+        <link href="files/sso-theme.min.css" rel="stylesheet" type="text/css">
         <script src='waxjs.js'></script>
         <script src='games.js'></script>
         <script src='users.js'></script>
@@ -24,19 +30,12 @@
   gtag('config', 'G-XTEM2SY6EK');
 </script>
             <script>
-                // When the user clicks on <div>, open the popup
+                
                 function myFunction() {
                   var popup = document.getElementById("myPopup");
                   popup.classList.toggle("show");
                 }
                 </script>
-                <!--
-                  <script type="text/javascript">
-  if (screen.width <= 699) {
-    document.location = "mobile.html";
-  }
-</script>
-                -->
 
 
 <link href="files/notification/light-theme.min.css" rel="stylesheet">
@@ -115,7 +114,7 @@
   left: 0;
   top: 0;
   background-color: rgb(0,0,0); /* Black fallback color */
-  background-color: rgba(0,0,0, 0.8); /* Black w/opacity */
+  background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
   overflow-x: hidden; /* Disable horizontal scroll */
   transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
 }
@@ -123,7 +122,7 @@
 /* Position the content inside the overlay */
 .overlay-content {
   position: relative;
-  top: 10%; /* 25% from the top */
+  top: 15%; /* 25% from the top */
   width: 100%; /* 100% width */
   text-align: center; /* Centered text/links */
   margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
@@ -133,18 +132,9 @@
 .overlay a {
   padding: 8px;
   text-decoration: none;
-  font-size: 24px;
-  color: #818181;
-   display: block; /* Display block instead of inline */
-  transition: 0.3s; /* Transition effects on hover (color) */
-}
-
-.overlay p {
-  padding: 8px;
-  text-decoration: none;
   font-size: 36px;
-  color: #FFFFFF;
- /*  display: block; Display block instead of inline */
+  color: #818181;
+  display: block; /* Display block instead of inline */
   transition: 0.3s; /* Transition effects on hover (color) */
 }
 
@@ -170,7 +160,7 @@
     right: 35px;
   }
 } 
- /* The Overlay2 (background) */
+ /* The Overlay (background) */
  .overlay2 {
   /* Height & width depends on how you want to reveal the overlay (see JS below) */   
   height: 100%;
@@ -200,12 +190,12 @@
   text-decoration: none;
   font-size: 36px;
   color: #818181;
-   display: block; /* Display block instead of inline */
+  display: block; /* Display block instead of inline */
   transition: 0.3s; /* Transition effects on hover (color) */
 }
 
 /* When you mouse over the navigation links, change their color */
-.overlay2 a:hover, .overlay2 a:focus {
+.overlay2 a:hover, .overlay a:focus {
   color: #f1f1f1;
 }
 
@@ -221,63 +211,6 @@
 @media screen and (max-height: 450px) {
   .overlay2 a {font-size: 20px}
   .overlay2 .closebtn {
-    font-size: 40px;
-    top: 15px;
-    right: 35px;
-  }
-} 
-
- /* The Overlay3 (background) */
- .overlay3 {
-  /* Height & width depends on how you want to reveal the overlay (see JS below) */   
-  height: 100%;
-  width: 0;
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  background-color: rgb(0,0,0); /* Black fallback color */
-  background-color: rgba(0,0,0, 0.0); /* Black w/opacity */
-  overflow-x: hidden; /* Disable horizontal scroll */
-  transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
-}
-
-/* Position the content inside the overlay */
-.overlay-content3 {
-  position: relative;
-  top: 0%; /* 25% from the top */
-  width: 100%; /* 100% width */
-  text-align: center; /* Centered text/links */
-  margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
-}
-
-/* The navigation links inside the overlay */
-.overlay3 a {
-  padding: 8px;
-  text-decoration: none;
-  font-size: 36px;
-  color: #818181;
-  display: block; /* Display block instead of inline */
-  transition: 0.3s; /* Transition effects on hover (color) */
-}
-
-/* When you mouse over the navigation links, change their color */
-.overlay3 a:hover, .overlay3 a:focus {
-  color: #f1f1f1;
-}
-
-/* Position the close button (top right corner) */
-.overlay3 .closebtn {
-  position: absolute;
-  top: 20px;
-  right: 45px;
-  font-size: 60px;
-}
-
-/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
-@media screen and (max-height: 450px) {
-  .overlay3 a {font-size: 20px}
-  .overlay3 .closebtn {
     font-size: 40px;
     top: 15px;
     right: 35px;
@@ -356,10 +289,15 @@
 }
 
 neftyblocks-market {
- align: center;
- width: 95%;
- margin-left: auto;
- margin-right: auto;
+ 
+  width: 85%;
+  
+  margin-left: auto;
+  margin-right: 10px;
+}
+
+body {
+  background-image: url('files/bg2-plain.png');
 }
   </style>
      </head> 
@@ -367,16 +305,20 @@ neftyblocks-market {
           <body>
           
             -->
-        <body style="background-image: url('files/bg2-plain.png');" align="center">
-            <div class="main">
-                <script>
-                    document.write('<iframe id="iframe" name="iframe" class="reponsive-iframe" src="home.html?ref=');
-                    document.write(ref);
-                    document.write('" width="100%" height="100%" frameborder="0"></iframe>');
-                    
-                </script>
-            
+        <body>
+          <center>
+            <div id="container">
+              <br>
+              <img style="display: width: 60px; height: 60px; margin-top: 0px; margin-left: 0px; margin-right: 0px" src="files/images/logo-freecity.png">
+              <br>
+              <p>Subscribe to FreeCityGame<p>
+                </center>
+                <br><br>
+                
+              
               </div>
+            <neftyblocks-market collection="freecitygame" limit="4"></neftyblocks-market>
+              <script type="module" src="https://cdn.jsdelivr.net/npm/@neftyblocks/market@latest"></script>
             <div id="mySidenav" class="sidenav">
                 <a onclick="openNav()" id="freecity"><img style="display: width: 60px; height: 60px; margin-top: 0px; margin-left: 0px; margin-right: 0px" src="files/images/logo-freecity.png"></a>
                 <a onclick="openNav2()" id="waxquest"><img style="display: width: 38px; height: 38px; margin-top: 0px; margin-left: 0px; margin-right: 0px" src="files/images/logo-waxquest.png"></a>
@@ -384,61 +326,33 @@ neftyblocks-market {
 
  <!-- The overlay -->
  <div id="myNav" class="overlay">
-
     <!-- Button to close the overlay navigation -->
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-
     <!-- Overlay content -->
     <div class="overlay-content">
-        <div id="main" class="main">
-            <script>
-            document.write('<p><a target="iframe" href="subscribe.html?ref=' + ref + '">Subscribe</a>');
-            // document.write('<a target="iframe" href="marketplace.html?ref=' + ref + '">Marketplace</a>');
-            document.write('<a onclick="openNav3()">Marketplace +</a>');
+        <script>
+            document.write('<a target="iframe" href="subscribe.html?ref=' + ref + '">Subscribe</a>');
+            document.write('<a target="" href="marketplace.html?ref=' + ref + '">Marketplace</a>');
             document.write('<a target="iframe" href="claim.html?ref=' + ref + '">Claim RMX</a>');
             document.write('<a target="iframe" href="affiliate.html?ref=' + ref + '">Ranking</a>');
             document.write('<a target="iframe" href="docs.html?ref=' + ref + '">Docs</a>');
             document.write('<a target="iframe" href="https://dev.remixworlds.com/?ref=' + ref + '">Blends</a>');
             document.write('<a target="iframe" href="https://dev.remixworlds.com/?ref=' + ref + '">Stake</a>');
-            document.write('<a target="iframe" href="team.html?ref=' + ref + '">Use RMX</a>');
+            document.write('<a target="iframe" href="team.html?ref=' + ref + '">Buy NFT With RMX</a>');
             document.write('<a target="iframe" href="team.html?ref=' + ref + '">Team</a>');
-            document.write('<a target="iframe" href="affiliate.html?ref=' + ref + '">Affiliate Listing</a></p>');
+            document.write('<a target="iframe" href="affiliate.html?ref=' + ref + '">Affiliate Listing</a>');
         </script>
-        </div>
     </div>
-  
   </div>
 
   <!-- The overlay -->
  <div id="myNav2" class="overlay2">
-
     <!-- Button to close the overlay navigation -->
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav2()">&times;</a>
-  
     <!-- Overlay content -->
     <div class="overlay-content2">
-      
       <a target="iframe" href="waxquest.html">Soon</a>
-
     </div>
-  
-  </div>
-
-   <!-- The overlay -->
- <div id="myNav3" class="overlay3">
-
-    <!-- Button to close the overlay navigation -->
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav3()">&times;</a>
-  
-    <center><img style="display: width: 60px; height: 60px; margin-top: 15px; margin-left: 0px; margin-right: 0px" src="files/images/logo-freecity.png"></center>
-    
-    <!-- Overlay content -->
-    <div class="overlay-content3">
-        
-        <neftyblocks-market collection="freecitygame"></neftyblocks-market>
-        <script type="module" src="https://cdn.jsdelivr.net/npm/@neftyblocks/market@latest"></script>
-    </div>
-  
   </div>
 
   <!-- Use any element to open/show the overlay navigation menu 
@@ -467,27 +381,10 @@ function closeNav2() {
   document.getElementById("myNav2").style.width = "0%";
 } 
 </script>
-<script>
-    /* Open when someone clicks on the span element */
-function openNav3() {
-  document.getElementById("myNav3").style.width = "100%";
-}
 
-/* Close when someone clicks on the "x" symbol inside the overlay */
-function closeNav3() {
-  document.getElementById("myNav3").style.width = "0%";
-} 
-</script>
+        
 
-         <!--
-            <script>
-    var blink_speed = 500; // every 1000 == 1 second, adjust to suit
-      var t = setInterval(function () {
-          var ele = document.getElementById('myBlinkingDiv');
-          ele.style.visibility = (ele.style.visibility == 'hidden' ? '' : 'hidden');
-      }, blink_speed);
-      </script>     
-    -->
+
 
     </body>
 </html>

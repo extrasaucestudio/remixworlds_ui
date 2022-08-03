@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html class="no-js" lang="fr">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width, maximum-scale=1.0">
+    <title>RemixWorlds - Claim</title>
+    <link rel="preload" href="files/Site.min.css" as="style">
+    <link rel="reload" href="files/style.min.css" as="style">
+        <link rel="preload" href="files/sso-theme.min.css" as="style">
+    <link href="files/Site.min.css" rel="stylesheet" type="text/css">
+    <link href="files/style.min.css" rel="stylesheet" type="text/css">
+        <link href="files/sso-theme.min.css" rel="stylesheet" type="text/css">
+        <script src='waxjs.js'></script>
+        <script src='users.js'></script>
+        <!--
+          <script type="text/javascript" src="files/codebase/suite.js?v=7.3.3"></script>
+		<link rel="stylesheet" href="files/codebase/suite.css?v=7.3.3">
+		<link rel="stylesheet" href="files/index.css?v=7.3.3">
+        -->
+        
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="files/main.css">
+
+<!-- notification -->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,500,600" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<style>
+    body {
+        font-family: 'Open Sans';
+    }
+</style>
+<link href="files/notification/light-theme.min.css" rel="stylesheet">
+<link href="files/notification/dark-theme.min.css" rel="stylesheet">
+<link href="files/notification/colored-theme.min.css" rel="stylesheet">
+<script type="text/javascript" src="files/notification/growl-notification.min.js"></script>
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XTEM2SY6EK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XTEM2SY6EK');
+</script>
+
+
+
+
+</head>
+<body style="background-image: url('files/bg2-plain.png');" align="center">
+<center>
+    <div id="container">
+      <br>
+      <img style="display: width: 60px; height: 60px; margin-top: 0px; margin-left: 0px; margin-right: 0px" src="files/images/logo-freecity.png">
+      <br>
+      <p>Claim RMX tokens once every 24 hours.<br>
+        <section id="main">
+        1- Login with your WAX Wallet!
+        <br><br>
+        <img id="login" onclick=login() style="display: block; width: 75px; height: 75px; margin-top: 0px; margin-left: auto; margin-right: auto" src="files/wax.svg">
+      <span id="username"></span>            
+            <br><br>
+            
+           
+2- Click to the Claim buttons!
+<br><br>
+<button id="sign" onclick=sign() >Claim RMX Token</button><br><br>
+
+<span id="response"></span>
+</p>
+            
+            
+
+
+</section>
+
+<br>
+Quebec enterprise number: (NEQ) 2277160562 Extra Sauce Studio 21 rue de la pointe, saint-alphonse-rodriguez, J0K 1W0, Quebec, Canada
+<br>
+<img src="files/images/logo-extrasaucestudio.png" alt="Extra Sauce Studio" width="40px" height="40px">
+  <p hidden="hidden" id="current"></p>
+  <input hidden="hidden" id="wallet">  
+
+</div>
+      
+<script>
+  const wax = new waxjs.WaxJS({
+    rpcEndpoint: 'https://wax.greymass.com'
+  });
+
+  async function login() {
+    try {
+      const userAccount = await wax.login();
+      document.getElementById('wallet').value = userAccount;
+      await getCurrentMessage();
+    } catch(e) {
+      document.getElementById('response').append(e.message);
+    }
+  }
+
+  async function sign() {
+    if(!wax.api) {
+      return document.getElementById('response').append('Login first -- ');
+    }
+
+    const wallet = document.getElementById('wallet').value;
+
+    try {
+      const result = await wax.api.transact({
+        actions: [{
+          account: 'freecitygamx',
+          name: 'claimstake',
+          authorization: [{
+            actor: wax.userAccount,
+            permission: 'active',
+          }],
+          data: {
+            wallet,
+          },
+        }]
+      }, {
+        blocksBehind: 3,
+        expireSeconds: 30
+      });
+      //document.getElementById('response').append(JSON.stringify(result));
+      document.getElementById('response').append('Claim done, refresh the page to see your RMX balance updated -- ');
+
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      await getCurrentMessage();
+    } catch(e) {
+      document.getElementById('response').append(e.message);
+    }
+  }
+
+  async function getCurrentMessage() {
+    const res = await wax.rpc.get_table_rows({
+      json: true,
+      code: 'freecitygamx',
+      scope: 'freecitygamx',
+      table: 'users',
+      lower_bound: wax.userAccount,
+      upper_bound: wax.userAccount,
+    });
+
+    const message = res.rows[0] ? res.rows[0].message : `<No message is set for ${wax.userAccount}>`;
+     // document.getElementById('username').append(wax.userAccount);
+      document.getElementById('username').textContent = `Wallet: ${wax.userAccount}`;
+      sessionStorage.setItem('username', wax.userAccount);
+    console.log(sessionStorage.getItem('username'));
+    sessionStorage.setItem('referralurl', `https://play.remixworlds.com/?ref=${wax.userAccount}`);
+  }
+
+  // set a random value to the initial message value
+  document.getElementById('message').value = Math.random().toString(36).substring(2);
+
+</script>
+
+<!--
+<script>
+  const wax = new waxjs.WaxJS({
+    rpcEndpoint: 'https://wax.greymass.com'
+  });
+
+  async function login() {
+    try {
+      const userAccount = await wax.login();
+      document.getElementById('wallet').value = wax.userAccount;
+      
+      await getCurrentMessage();
+    } catch(e) {
+      document.getElementById('response').append(e.message);
+
+    }
+  }
+
+  async function sign() {
+    if(!wax.api) {
+      return document.getElementById('response').append('Login First! ');
+     
+    }
+
+    const wallet = document.getElementById('wallet').value;
+
+    try {
+      const result = await wax.api.transact({
+        actions: [{
+          account: 'freecitygamx',
+          name: 'claimstake',
+          authorization: [{
+            actor: wax.userAccount,
+            permission: 'active',
+          }],
+          data: {
+            wallet,
+          },
+        }]
+      }, {
+        blocksBehind: 3,
+        expireSeconds: 30
+      });
+      
+      document.getElementById('response').append(`Subscription Successful!`);
+      GrowlNotification.notify({
+              title: `Subscription Successful!`,
+              description: `Visit <a href="affiliate.html" target="iframe">Affiliate Listing</a>`,
+              type: 'success',
+              position: 'bottom-right',
+              closeTimeout: 0
+              });
+      //document.getElementById('response4').append(`https://wax.greymass.com/transaction/${result.transaction_id}`);
+      // document.createElement("<div id='myID'> my Text </div>");
+      // document.body.insertBefore(elem,document.body.childNodes[0]);
+      // document.getElementById('response').append(JSON.stringify(result));
+      // console.log(result); 
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      await getCurrentMessage();
+    } catch(e) {
+      document.getElementById('response').append('* Expired Transaction *');
+    }
+  }
+
+    async function getCurrentMessage() {
+    const res = await wax.rpc.get_table_rows({
+      json: true,
+      code: 'freecitygamx',
+      scope: 'freecitygamx',
+      table: 'users',
+      lower_bound: wax.userAccount,
+      upper_bound: wax.userAccount,
+    });
+    
+
+    const message = res.rows[0] ? res.rows[0].message : `Wallet: ${wax.userAccount}`;
+    document.getElementById('current').textContent = message;
+    document.getElementById('current2').textContent = `Wallet: ${wax.userAccount}`;
+    //document.getElementById('current3').textContent = `Your Referral Link`;
+    //document.getElementById('current4').textContent = `https://waxio.io/?ref=${wax.userAccount}`;
+
+    
+
+    //document.getElementById('current5').textContent = ("<p>");
+    //document.getElementById('current5').textContent = ("Subscribe");
+    //document.getElementById('current5').textContent = ("</p>");
+    //document.getElementById('current5').textContent = ("<div id='sign' onclick=sign()>Subscribe</div>");
+    //document.getElementById('current7').textContent = '<p>xxx</p><br>';
+    
+    // document.getElementById('current3').textContent = `Now you are ready to `;
+    //sessionStorage.setItem('waxwallet', wax.userAccount);
+    //console.log(sessionStorage.getItem('waxwallet'));
+    //sessionStorage.setItem('affiliatewallet', ref);
+    //console.log(sessionStorage.getItem('affiliatewallet'));
+  }
+   // set a random value to the initial message value
+  document.getElementById('message').value = Math.random().toString(36).substring(2);
+
+</script>      
+-->
+        
+      
+
+
+
+
+
+
+    
+    </center>
+    
+</body></html>

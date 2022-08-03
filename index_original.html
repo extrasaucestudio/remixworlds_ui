@@ -1,0 +1,653 @@
+<html>
+    <head> 
+        <title>RemixWorlds - FreeCityGame</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="files/wax.svg" type="image/x-icon" />
+	    	<link rel="icon" href="files/wax.svg" sizes="16x16" />
+	    	<link rel="icon" href="files/wax.svg" sizes="32x32" />
+	    	<link rel="icon" href="files/wax.svg" sizes="48x48" />
+	    	<link rel="icon" href="files/wax.svg" sizes="96x96" />
+	    	<link rel="icon" href="files/wax.svg" sizes="144x144" />
+        <script type="text/javascript" src="files/codebase/suite.js"></script>
+		<link rel="stylesheet" href="files/codebase/suite.css">
+		<link rel="stylesheet" href="files/index.css">
+        <script src='waxjs.js'></script>
+        <script src='games.js'></script>
+        <script>
+            var url_string = window.location.href;
+            var url = new URL(url_string);
+            var ref = url.searchParams.get("ref") || 'waxdashwaxio';
+            var toiframe = url.searchParams.get("url") || 'go.html';
+            const affiliate_wallet = sessionStorage.getItem('affiliatewallet');
+            //var wallet = url.searchParams.get("wallet") || 'waxdashwaxio';
+            //var wallet = ${wax.userAccount};
+            console.log(sessionStorage.getItem('waxwallet'));
+            console.log(sessionStorage.getItem('affiliatewallet'));
+            //const affiliate_wallet = url.searchParams.get("ref") || 'waxdashwaxio';
+            </script>
+            <script async src="https://www.googletagmanager.com/gtag/js?id=G-XTEM2SY6EK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XTEM2SY6EK');
+</script>
+            <script>
+                // When the user clicks on <div>, open the popup
+                function myFunction() {
+                  var popup = document.getElementById("myPopup");
+                  popup.classList.toggle("show");
+                }
+                </script>
+                <!--
+                  <script type="text/javascript">
+  if (screen.width <= 699) {
+    document.location = "mobile.html";
+  }
+</script>
+                -->
+
+
+<link href="files/notification/light-theme.min.css" rel="stylesheet">
+<link href="files/notification/dark-theme.min.css" rel="stylesheet">
+<link href="files/notification/colored-theme.min.css" rel="stylesheet">
+<script type="text/javascript" src="files/notification/growl-notification.min.js"></script>
+<link
+		href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/4.4.95/css/materialdesignicons.css?v=6.4.2"
+		media="all" rel="stylesheet" type="text/css">
+	<style>
+		.dhx_sample-container,
+		.dhx_sample-container__widget {
+			height: 100%;
+		}
+	
+  .tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
+
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+  height: 100%;
+  width: 255px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+
+  text-decoration: none;
+  font-size: 15px;
+  color: #818181;
+  
+}
+
+.sidenav h1 {
+
+text-decoration: none;
+font-size: 15px;
+color: #818181;
+
+}
+
+.sidenav summary {
+
+  text-decoration: none;
+  font-size: 15px;
+  color: #818181;
+  
+}
+
+.sidenav div {
+
+text-decoration: none;
+font-size: 15px;
+color: #818181;
+
+}
+
+.sidenav details {
+  padding: 6px 6px 6px 12px;
+  text-decoration: none;
+  font-size: 15px;
+  color: #818181;
+  
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.main {
+  margin-left: 255px; /* Same as the width of the sidenav */
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+ /* The Overlay (background) */
+ .overlay {
+  /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+  height: 100%;
+  width: 0;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  background-color: rgb(0,0,0); /* Black fallback color */
+  background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the content inside the overlay */
+.overlay-content {
+  position: relative;
+  top: 25%; /* 25% from the top */
+  width: 100%; /* 100% width */
+  text-align: center; /* Centered text/links */
+  margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+/* The navigation links inside the overlay */
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block; /* Display block instead of inline */
+  transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+/* When you mouse over the navigation links, change their color */
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+/* Position the close button (top right corner) */
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+} 
+
+#mydiv {
+  position: absolute;
+  z-index: 9;
+  background-color: #f1f1f1;
+  border: 1px solid #d3d3d3;
+  text-align: center;
+}
+
+#mydivheader {
+  padding: 10px;
+  cursor: move;
+  z-index: 10;
+  background-color: #2196F3;
+  color: #fff;
+}
+  </style>
+     </head> 
+        <!--
+          <body>
+          
+            -->
+        <body style="background-image: url('files/bg2-plain.png');" align="center">
+          <div class="sidenav">
+            <center>
+              <img id="login" onclick=login() style="display: block; width: 75px; height: 75px; margin-top: 0px; margin-left: auto; margin-right: auto" src="files/wax.svg">
+              <div id="current2">Wax Login</div>
+
+<div id="container"></div>
+  <div><br>
+    <strong><a target="iframe" href="team.html">Team</a>
+   - <div class="tooltip">
+    <a target="iframe2" onclick="dhxwindow.show()" href="affiliate.html">Affiliate Listing</a>
+    <span class="tooltiptext">See your referrer or your referrals.</span>
+  </div><!-- - <a target="iframe" href="https://virl.com">Test</a>-->
+
+  
+  </strong>
+  </div>
+  <br>
+            </center>
+            <script>
+            var blink_speed = 500; // every 1000 == 1 second, adjust to suit
+              var t = setInterval(function () {
+                  var ele = document.getElementById('myBlinkingDiv');
+                  ele.style.visibility = (ele.style.visibility == 'hidden' ? '' : 'hidden');
+              }, blink_speed);
+              </script>
+
+               
+
+              <!--
+  <img style="display: width: 13px; height: 13px;" src="files/images/logo-info2.png"></a> <a target="iframe" href="https://nfthive.io/market?collection=rplanet"><img style="display: width: 12px; height: 12px;" src="files/images/logo-nfthive.svg"></a><br>
+
+--> 
+
+<script>
+  //document.write('xxx');
+  document.write('<div><img style="display: width: 100px; height: 100px; margin-top: 0px; margin-left: 0px; margin-right: 0px" src="https://ipfs.hivebp.io/thumbnail?hash=' + freecitygame_img + '"><br><strong>' + freecitygame_name + '</strong> <br><strong><a target="iframe" href="' + freecitygame_gameurl + '">Play in Background</a><br><a target="iframe2" onclick="dhxwindow.show()" href="' + freecitygame_gameurl + '">Play in Popup</a><br><a target="iframe" href="https://eosauthority.com/account/' + freecitygame_gamewallet + '?network=wax">EOSAuthority in Background</a><br><a target="iframe2" onclick="dhxwindow.show()" href="https://eosauthority.com/account/' + freecitygame_gamewallet + '?network=wax">EOSAuthority in Popup</a><br><a target="iframe" href="https://waxmarketcap.com/collection/' + freecitygame_gamewallet + '">MarketCap in Background</a><br><a target="iframe2" onclick="dhxwindow.show()" href="https://waxmarketcap.com/collection/' + freecitygame_gamewallet + '">MarketCap in Popup</a><br><a target="iframe" href="https://nfthive.io/market?collection=' + freecitygame_gamewallet + '">NFTHive Market in Background</a><br><a target="iframe2" onclick="dhxwindow.show()" href="https://nfthive.io/market?collection=' + freecitygame_gamewallet + '">NFTHive Market in Popup</a></strong></div>');
+
+  document.write('<details><summary><strong>Chatroom</strong></summary>');
+  document.write('<details><summary><strong>Discord</strong></summary><strong><a target="iframe" href="https://titanembeds.com/embed/886577077803958312">Open in Background</a><br><a target="iframe2" onclick="dhxwindow.show()" href="https://titanembeds.com/embed/886577077803958312">Open in Popup</a></strong></details>');
+  document.write('</details>');
+
+ 
+  
+  
+  document.write('<details><summary><strong>dApp</strong></summary>');
+  document.write('<details><summary><strong>Alcor</strong></summary><a target="iframe" href="https://wax.alcor.exchange/swap/">Swap in Backgound</a><br><a target="iframe2" onclick="dhxwindow.show()" href="https://wax.alcor.exchange/swap/">Swap in Popup</a><br><a target="iframe" href="https://wax.alcor.exchange/wallet/">Wallet in Backgound</a><br><a target="iframe2" onclick="dhxwindow.show()" href="https://wax.alcor.exchange/wallet/">Wallet in Popup</a><br></details>');
+  document.write('<details><summary><strong>NFTHive</strong></summary><a target="iframe" href="https://nfthive.io/market/">Market in Backgound</a><br><a target="iframe2" onclick="dhxwindow.show()" href="https://nfthive.io/market/">Market in Popup</a><br><a target="iframe" href="https://nfthive.io/trade/">Trade in Backgound</a><br><a target="iframe2" onclick="dhxwindow.show()" href="https://nfthive.io/trade/">Trade in Popup</a></details>');
+  document.write('<details><summary><strong>WaxMarketCap</strong></summary><a target="iframe" href="https://waxmarketcap.com/">Open in Backgound</a><br><a target="iframe2" onclick="dhxwindow.show()" href="https://waxmarketcap.com/">Open in Popup</a></details>');
+  document.write('<details><summary><strong>VirlMarket</strong></summary><a target="iframe" href="https://virl.com">Open in Backgound</a><br><a target="iframe2" onclick="dhxwindow.show()" href="https://virl.com">Open in Popup</a></details>');
+  document.write('</details>');
+  document.write('<details><summary><strong>Share Waxio</strong></summary>Share with <a target="_blank" href="https://twitter.com/share?url=https%3A%2F%2Fwaxio.io&amp;text=Wax%20Gaming%20Dashboard%20to%20manage%20multiple%20games%20and%20dApp%20in%20the%20same%20page%20%23wax%20%23waxp%20%23waxgaming%20%23waxio%20%23waxgame%20%23waxnft%20%23nft&amp;">Twitter</a> or <a target="_blank" href="http://www.facebook.com/share.php?u=https://waxio.io.org/">Facebook</a></details>');
+  </script>
+
+
+
+            <center>
+              <div><br>
+                Can’t find the right dApp?<br>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSd4yuSFHX1euM3g__lxAsspStauayb8uubrDLxSYFJXNvKzFQ/viewform?vc=0&c=0&w=1&flr=0" target="iframe">Request an dApp</a>
+              </div>
+              <br>
+              <a target="iframe" href="https://waxmarketcap.com/"><img style="display: width: 2px; height: 20px; margin-top: 0px; margin-left: 0px; margin-right: 0px" src="files/images/logo-waxmarketcap.svg"></a>
+              <br><br><div hidden="hidden" id="response"></div>
+                <strong><div id="current3"></div></strong>
+                <div id="current4"></div>
+              <br>
+              <div>
+              Discord Members: <span id="json-id"></span><br><a href="https://discord.com/invite/D7SbP6AY" target="iframe"><span id="json-name"></span></a>
+              </div>
+              <div id="debug"></div>
+<script>
+  /* Open when someone clicks on the span element */
+function openNav() {
+  document.getElementById("myNav").style.width = "100%";
+}
+
+/* Close when someone clicks on the "x" symbol inside the overlay */
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+} 
+</script>
+<div id="myNav" class="overlay">
+
+  <!-- Button to close the overlay navigation -->
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+  <!-- Overlay content -->
+  <div class="overlay-content">
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Clients</a>
+    <a href="#">Contact</a>
+  </div>
+
+</div>
+
+<!-- Use any element to open/show the overlay navigation menu -->
+<span onclick="openNav()">open</span>
+
+              </center>
+              <p hidden="hidden" id="current"></p>
+              <input hidden="hidden" id="wallet">
+
+            
+        <div>
+    <span id="collection-name"></span>
+     </div>
+     <script>
+            fetch("https://discord.com/api/guilds/886577077803958312/widget.json")
+            .then(response => response.json())
+            .then(data => {
+                console.log(data.channels[0].name);
+                document.querySelector("#json-id").innerText = data.presence_count;
+                document.querySelector("#json-name").innerText = data.instant_invite;
+            })
+
+            </script>
+
+  <script>
+  fetch("https://atomic.hivebp.io/atomicassets/v1/assets?collection_name=freecitygame&template_id=369713&page=1&limit=100&order=desc&sort=asset_id")
+  .then(response => response.json())
+  .then(data => {
+      console.log(data.channels[0].name);
+      document.querySelector("#collection-name").innerText = data.asset_id;
+  })
+  </script>
+
+
+
+ <!--
+<script>
+    fetch("files/files/config.json")
+    .then(response => response.json())
+    .then(data => {
+        console.log(data.instant_invite);
+        document.querySelector("#debug").innerText = data.instant_invite);
+    })
+
+    </script>
+
+ <script>
+let maVoiture = {
+  make: 'Ford',
+  model: 'Mustang',
+  year: 1969
+};
+ </script>
+-->
+
+
+
+
+<script src="https://bundles.interactjs.io/c17a1daa.js"></script>
+    
+
+          </div>
+          
+          <div class="main">
+            
+            <iframe id="iframe" name="iframe" class="reponsive-iframe" src="http://51.222.117.183:3001" width="100%" height="100%" frameborder="0"></iframe>
+          </div>
+           <!--
+            <header class="dhx_sample-header">
+            <div class="dhx_sample-header__main">
+              <nav class="dhx_sample-header__breadcrumbs">
+                <ul class="dhx_sample-header-breadcrumbs">
+                        <li class="dhx_sample-header-breadcrumbs__item">
+                          <a href="index.html" class="dhx_sample-header-breadcrumbs__link">Home</a>
+                        </li>
+                        <li>
+                          <a href="index.html" class="dhx_sample-header-breadcrumbs__link">Refresh</a>
+                        </li>
+                      </ul>
+              </nav>
+              <h1 class="dhx_sample-header__title">
+                <div class="dhx_sample-header__content">
+                  Waxio
+                </div>
+              </h1>
+            </div>
+          </header>
+       
+<strong>ClashDome</strong> - <a target="iframe" href="https://clashdome.io/">Play</a>/<a target="iframe" href="https://waxmarketcap.com/collection/clashdomenft">Info</a>/<a target="iframe" href="https://nfthive.io/market?collection=clashdomenft">Market</a><br>
+
+<div class="popup" onclick="myFunction()">Market<span class="popuptext" id="myPopup">
+<iframe name="popup" class="reponsive-iframe" src="xxx" width="1000px" height="600px"></iframe></span></div>
+   
+<div class="tooltip">WaxLogin<span class="tooltiptext">Tooltip text</span></div>
+<div class="tooltip">WaxLogin<span class="tooltiptext">Tooltip text</span></div>
+
+<script>document.write("<p id='sign' onclick=sign()>Subscribe</p>");</script><br>
+
+
+<form name="FormInput" action="" method="get" id="input" onsubmit="document.getElementById('iframe').src=document.FormInput.site.value;">Custom URL<br><input type="text" name="site"/><br/><input type="submit" value="Submit"/><br/></form><div id="msg"></div>
+<form name="url" action="" metod="POST" target="iframe"><label for="url">Custom URL</label><input size="30" type="text" name="url" id="url" placeholder="https://play.xpsgame.com" pattern="https://.*" required><br><input type="submit" value="Submit"></form>
+
+<details><summary><strong>Games</strong></summary><strong>Rplanet</strong> - <a target="iframe" href="https://rplanet.io/lab">Play</a>/<a target="iframe" href="https://waxmarketcap.com/collection/rplanet">Info</a>/<a target="iframe" href="https://nfthive.io/market?collection=rplanet">M</a><br><strong>Crypto4Shots</strong> - <a target="iframe" href="https://play.crypto-shots.com">Play</a>/<a target="iframe" href="https://waxmarketcap.com/collection/crypto4shots">Info</a>/<a target="iframe" href="https://nfthive.io/market?collection=crypto4shots">M</a><br><strong>Xpansion</strong> - <a target="iframe" href="https://play.xpsgame.io/">Play</a>/<a target="iframe" href="https://waxmarketcap.com/collection/xpansiongame">Info</a>/<a target="iframe" href="https://nfthive.io/market?collection=xpansiongame">M</a><br><strong>OnMars</strong> - <a target="iframe" href="https://milliononmars.io">Play</a>/<a target="iframe" href="https://waxmarketcap.com/collection/onmars">Info</a>/<a target="iframe" href="https://nfthive.io/market?collection=onmars">M</a>/<a target="iframe" href="https://digipedro.github.io/mom_quant/">T</a><br><strong>MiningNetwork</strong> - <a target="iframe" href="https://miningnetwork.io/">Play</a>/<a target="iframe" href="https://waxmarketcap.com/collection/miningntwrkc">Info</a>/<a target="iframe" href="https://nfthive.io/market?collection=miningntwrkc">M</a><br><strong>FarmersWorld</strong> - <a target="iframe" href="https://play.farmersworld.io/">Play</a>/<a target="iframe" href="https://waxmarketcap.com/collection/farmersworld">Info</a>/<a target="iframe" href="https://nfthive.io/market?collection=farmersworld">M</a><br><strong>FreeCityGame</strong> - <a target="iframe" href="https://play.remixworlds.com/">Play</a>/<a target="iframe" href="https://waxmarketcap.com/collection/freecitygame">Info</a>/<a target="iframe" href="https://nfthive.io/market?collection=freecitygame">M</a><br><strong>ImmerSys</strong> - <a target="iframe" href="https://companion.immersys.io">Play</a>/<a target="iframe" href="https://waxmarketcap.com/collection/immersys">Info</a>/<a target="iframe" href="https://nfthive.io/market?collection=immersys">M</a><br><strong>ArenaOfGlory</strong> - <a target="iframe" href="https://play.arenaofglory.io">Play</a>/<a target="iframe" href="https://waxmarketcap.com/collection/arenaofglory">Info</a>/<a target="iframe" href="https://nfthive.io/market?collection=arenaofglory">M</a><br><strong>DiggersWorld</strong> - <a target="iframe" href="https://play.diggersworld.io">Play</a>/<a target="iframe" href="https://waxmarketcap.com/collection/diggersworld">Info</a>/<a target="iframe" href="https://nfthive.io/market?collection=diggersworld">M</a><br><strong>GreenRabbit</strong> - <a target="iframe" href="https://play.greenrabbitgame.io">Play</a>/<a target="iframe" href="https://waxmarketcap.com/collection/greenrabbit">Info</a>/<a target="iframe" href="https://nfthive.io/market?collection=greenrabbit">M</a><br><strong>GnoCity</strong> - <a target="iframe" href="https://www.gnocity.io/">Play</a>/<a target="iframe" href="https://waxmarketcap.com/collection/gnocityworld">Info</a>/<a target="iframe" href="https://nfthive.io/market?collection=gnocityworld">M</a><br><strong>AgeOfFarming</strong> - <a target="iframe" href="https://play.ageoffarming.io">Play</a>/<a target="iframe" href="https://waxmarketcap.com/collection/ageoffarming">Info</a>/<a target="iframe" href="https://nfthive.io/market?collection=ageoffarming">M</a><br><strong>FunnyCat</strong> - <a target="iframe" href="https://play.funnycat.io">Play</a>/<a target="iframe" href="https://waxmarketcap.com/collection/funnycatgame">Info</a>/<a target="iframe" href="https://nfthive.io/market?collection=funnycatgame">M</a><br><strong>NFTPanda</strong> - <a target="iframe" href="https://game.nftpanda.space">Play</a>/<a target="iframe" href="https://waxmarketcap.com/collection/nftpandawaxp">Info</a>/<a target="iframe" href="https://nfthive.io/market?collection=nftpandawaxp">M</a><br><strong>GoldMand</strong> - <a target="iframe" href="https://play.goldmand.io">Play</a>/<a target="iframe" href="https://waxmarketcap.com/collection/goldmandgame">Info</a>/<a target="iframe" href="https://nfthive.io/market?collection=goldmandgame">M</a><br><strong>RealmNFT</strong> - <a target="iframe" href="https://play.realmnft.io">Play</a>/<a target="iframe" href="https://waxmarketcap.com/collection/realmnftgame">Info</a>/<a target="iframe" href="https://nfthive.io/market?collection=realmnftgame">M</a><br><strong>DragonsValley</strong> - <a target="iframe" href="https://play.dragonsvalley.io">Play</a>/<a target="iframe" href="https://waxmarketcap.com/collection/dragonvalley">Info</a>/<a target="iframe" href="https://nfthive.io/market?collection=dragonvalley">M</a><br><strong>TokenLands</strong> - <a target="iframe" href="https://playing.tokenlands.io/en/play/">Play</a>/<a target="iframe" href="https://waxmarketcap.com/collection/tokenlands11">Info</a>/<a target="iframe" href="https://nfthive.io/market?collection=tokenlands11">M</a><br><strong>BCBrawlers</strong> - <a target="iframe" href="https://play.bcbrawlers.com/">Play</a>/<a target="iframe" href="https://waxmarketcap.com/collection/bcbrawlers">Info</a>/<a target="iframe" href="https://nfthive.io/market?collection=bcbrawlers">M</a><br><strong>WaxRush</strong> - <a target="iframe" href="https://waxrush.com">Play</a>/<a target="iframe" href="https://waxmarketcap.com/collection/waxrushrush1">Info</a>/<a target="iframe" href="https://nfthive.io/market?collection=waxrushrush1">M</a><br><strong>DesertFarm</strong> - <a target="iframe" href="https://play.desertfarm.io/?ref=waxdashwaxio">Play</a>/<a target="iframe" href="https://waxmarketcap.com/collection/desertfarmio">Info</a>/<a target="iframe" href="https://nfthive.io/market?collection=desertfarmio">M</a><br><strong>ClashDome</strong> - <a target="iframe" href="https://clashdome.io/">Play</a>/<a target="iframe" href="https://waxmarketcap.com/collection/clashdomenft">Info</a>/<a target="iframe" href="https://nfthive.io/market?collection=clashdomenft">M</a><br><strong>CenturyTrain</strong> - <a target="iframe" href="https://play.trains.cards">Play</a>/<a target="iframe" href="https://waxmarketcap.com/collection/centurytrain">Info</a>/<a target="iframe" href="https://nfthive.io/market?collection=centurytrain">M</a><br><strong>BlockchainRPG</strong> - <a target="iframe" href="https://play.blockchainrpg.io">Play</a>/<a target="iframe" href="https://waxmarketcap.com/collection/brpg">Info</a>/<a target="iframe" href="https://nfthive.io/market?collection=brpg">M</a><br></details><details><summary><strong>Tools</strong></summary><strong>Alcor</strong> - <a target="iframe" href="https://wax.alcor.exchange/swap/">Swap</a>/<a target="iframe" href="https://wax.alcor.exchange/wallet/">Wallet</a><br><strong>NFTHive</strong> - <a target="iframe" href="https://nfthive.io/market/">Market</a>/<a target="iframe" href="https://nfthive.io/trade/">Trade</a><br><strong>WaxMarketcap</strong> - <a target="iframe" href="https://waxmarketcap.com/">dApp</a><br><strong>WaxAffiliation</strong> - <a target="iframe" href="https://waxaffiliation.io/?ref=">dApp</a></details><details><summary><strong>Share Waxio</strong></summary>Share with <a target="_blank" href="https://twitter.com/share?url=https%3A%2F%2Fwaxio.io&amp;text=Wax%20Gaming%20Dashboard%20to%20manage%20multiple%20games%20and%20dApp%20in%20the%20same%20page%20%23wax%20%23waxp%20%23waxgaming%20%23waxio%20%23waxgame%20%23waxnft%20%23nft&amp;">Twitter</a> or <a target="_blank" href="http://www.facebook.com/share.php?u=https://waxio.io.org/">Facebook</a><br></details><br><center><div id="container"></div><strong><a target="iframe" href="team.html">Team</a> - <div class="tooltip"><a target="iframe" href="affiliate.html">Affiliate Listing</a><span class="tooltiptext">See your referrer or your referrals.</span></div></strong><br><br><div id="current2"><img id="login" onclick=login() style="display: block; width: 50px; height: 50px; margin-top: 0px; margin-left: auto; margin-right: auto" src="files/wax.svg">Wax Login</div><br><div hidden="hidden" id="response"></div><strong><div id="current3"></div></strong><div id="current4"></div></center><p hidden="hidden" id="current"></p><input hidden="hidden" id="wallet">
+
+<iframe src="https://discord.com/widget?id=886577077803958312&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+<iframe src="https://www.twitch.tv/embed/<channel>/chat?parent=<parent>" height="<height>" width="<width>"></iframe>
+
+<script> window.intergramId = "1926645065" </script>
+<script id="intergram" type="text/javascript" src="https://www.intergram.xyz/js/widget.js"></script>
+
+<script> 
+  window.intergramId = "1926645065";
+  window.intergramCustomizations = {
+      titleClosed: 'Chat with the dev team',
+      titleOpen: 'Dev Team Chat',
+      introMessage: 'Chat with the dev team for help or for fun... why not! ',
+      autoResponse: "Probably we won't answer right away but we will answer you :)",
+      autoNoResponse: 'Unfortunately we are not there, we will answer very soon!',
+      mainColor: "#F89022", // Can be any css supported color 'red', 'rgb(255,87,34)', etc
+       alwaysUseFloatingButton: false // Use the mobile floating button also on large screens
+  };
+</script>
+
+-->     
+
+
+<script id="intergram" type="text/javascript" src="https://www.intergram.xyz/js/widget.js"></script>
+
+<center>
+        <script>
+			const windowHtml = '<iframe name="iframe2" class="responsive-iframe" src="https://titanembeds.com/embed/886577077803958312" height="100%" width="100%" frameborder="0"></iframe>';
+
+            const dhxwindow = new dhx.Window({
+				width: 475,
+				height: 600,
+				closable: true,
+				movable: true,
+				modal: false,
+				title: 'WAXIO (Drag me)',
+				html: windowHtml
+			});
+
+			dhxwindow.show();
+		</script>
+
+    <script>
+        const wax = new waxjs.WaxJS({
+          rpcEndpoint: 'https://wax.greymass.com'
+        });
+      
+        async function login() {
+          try {
+            const userAccount = await wax.login();
+            document.getElementById('wallet').value = wax.userAccount;
+
+            GrowlNotification.notify({
+                    title: `<div id="sign" onclick=sign()>Login Successful!</div>`,
+                    description: `<div id="sign" onclick=sign()>Now Click Here To Subscribe!</div>`,
+                    image: 'img/wax.svg',
+                    type: 'success',
+                    position: 'bottom-right',
+                    closeTimeout: 0
+                    });
+            
+            await getCurrentMessage();
+          } catch(e) {
+            document.getElementById('response').append(e.message);
+
+          }
+        }
+      
+        async function sign() {
+          if(!wax.api) {
+            return document.getElementById('response').append('Login First! ');
+           
+          }
+      
+          const wallet = document.getElementById('wallet').value;
+      
+          try {
+            const result = await wax.api.transact({
+              actions: [{
+                account: 'freecitygamx',
+                name: 'adduseraff',
+                authorization: [{
+                  actor: wax.userAccount,
+                  permission: 'active',
+                }],
+                data: {
+                  wallet,
+                  affiliate_wallet,
+                },
+              }]
+            }, {
+              blocksBehind: 3,
+              expireSeconds: 30
+            });
+            
+            document.getElementById('response').append(`Subscription Successful!`);
+            GrowlNotification.notify({
+                    title: `Subscription Successful!`,
+                    description: `Visit <a href="affiliate.html" target="iframe">Affiliate Listing</a>`,
+                    type: 'success',
+                    position: 'bottom-right',
+                    closeTimeout: 0
+                    });
+            //document.getElementById('response4').append(`https://wax.greymass.com/transaction/${result.transaction_id}`);
+            // document.createElement("<div id='myID'> my Text </div>");
+            // document.body.insertBefore(elem,document.body.childNodes[0]);
+            // document.getElementById('response').append(JSON.stringify(result));
+            // console.log(result); 
+            await new Promise(resolve => setTimeout(resolve, 1000));
+            await getCurrentMessage();
+          } catch(e) {
+            document.getElementById('response').append('* Expired Transaction *');
+          }
+        }
+      
+          async function getCurrentMessage() {
+          const res = await wax.rpc.get_table_rows({
+            json: true,
+            code: 'freecitygamx',
+            scope: 'freecitygamx',
+            table: 'users',
+            lower_bound: wax.userAccount,
+            upper_bound: wax.userAccount,
+          });
+          
+      
+          const message = res.rows[0] ? res.rows[0].message : `Wallet: ${wax.userAccount}`;
+          document.getElementById('current').textContent = message;
+          document.getElementById('current2').textContent = `Wallet: ${wax.userAccount}`;
+          document.getElementById('current3').textContent = `Your Referral Link`;
+          document.getElementById('current4').textContent = `https://waxio.io/?ref=${wax.userAccount}`;
+
+          
+
+          //document.getElementById('current5').textContent = ("<p>");
+          //document.getElementById('current5').textContent = ("Subscribe");
+          //document.getElementById('current5').textContent = ("</p>");
+          //document.getElementById('current5').textContent = ("<div id='sign' onclick=sign()>Subscribe</div>");
+          //document.getElementById('current7').textContent = '<p>xxx</p><br>';
+          
+          // document.getElementById('current3').textContent = `Now you are ready to `;
+          //sessionStorage.setItem('waxwallet', wax.userAccount);
+          //console.log(sessionStorage.getItem('waxwallet'));
+          //sessionStorage.setItem('affiliatewallet', ref);
+          //console.log(sessionStorage.getItem('affiliatewallet'));
+        }
+         // set a random value to the initial message value
+        document.getElementById('message').value = Math.random().toString(36).substring(2);
+      
+      </script>
+</script>
+
+</center>
+
+       <script>
+        // Make the DIV element draggable:
+dragElement(document.getElementById("mydiv"));
+
+function dragElement(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  if (document.getElementById(elmnt.id + "header")) {
+    // if present, the header is where you move the DIV from:
+    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+  } else {
+    // otherwise, move the DIV from anywhere inside the DIV:
+    elmnt.onmousedown = dragMouseDown;
+  }
+
+  function dragMouseDown(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // get the mouse cursor position at startup:
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    // call a function whenever the cursor moves:
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // calculate the new cursor position:
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    // set the element's new position:
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+  }
+
+  function closeDragElement() {
+    // stop moving when mouse button is released:
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
+       </script>
+        
+                 
+
+
+    </body>
+</html>

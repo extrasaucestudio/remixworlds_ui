@@ -6,7 +6,7 @@
 
 * { margin: 0; padding: 0; }
 html { overflow-y: scroll; }
-body { font: 12px/1.4 Helvetica, sans-serif; background: #333; color: #333; }
+body { font: 12px/1.4 Helvetica, sans-serif; color: #333; }
 .group:after { visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
 .group { display: inline-block; clear: both; }
 /* start commented backslash hack \*/ * html .group { height: 1%; } .group { display: block; } /* close commented backslash hack */
@@ -14,10 +14,10 @@ article, aside, figure, footer, header, hgroup, menu, nav, section { display: bl
 a:focus { outline: 0; }
 
 #page-wrap { 
-    width: 500px; margin: 40px auto 5px; background: #91c7ff; 
+    width: 60%; margin: 40px auto 5px;; 
     padding: 8px;
     background: -webkit-gradient(linear, left top, left bottom, from(#eee), to(#ccc));
-	background: -moz-linear-gradient(top,  #eee,  #ccc);
+	
 	-webkit-border-radius: 16px;
 	-moz-border-radius: 16px;
 }
@@ -28,22 +28,22 @@ h1 { font: bold 32px Helvetica, Arial, Sans-Serif; letter-spacing: -1px; padding
 p { margin: 0 0 15px 0; }
  
 nav ul { 
-    list-style: none; background: #154c85; padding: 5px 20px; width: 478px; position: relative; 
+    list-style: none; padding: 5px 20px; width: 478px; position: relative; 
     left: -9px;
 }
 nav ul li { display: inline; }
 nav ul li a {
-	display: block;
+	display: inline;
 	float: left;
 	border-top: 1px solid #96d1f8;
-	background: #3e779d;
-	background: -webkit-gradient(linear, left top, left bottom, from(#65a9d7), to(#3e779d));
-	background: -moz-linear-gradient(top,  #65a9d7,  #3e779d);
+	background: #000000;
+	background: -webkit-gradient(linear, left top, left bottom, from(#F89022), to(#F89022));
+	background: -moz-linear-gradient(top,  #F89022,  #F89022);
 	height: 17px;
 	padding: 0 10px;
-	-webkit-border-radius: 8px;
-	-moz-border-radius: 8px;
-	border-radius: 8px;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
 	-webkit-box-shadow: rgba(0,0,0,1) 0 1px 3px;
 	-moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
 	text-shadow: rgba(0,0,0,.4) 0 1px 0;
@@ -56,12 +56,12 @@ nav ul li a {
 nav ul li a:hover {
 	border-top: 1px solid #4789b4;
 	background: #28597a;
-	background: -webkit-gradient(linear, left top, left bottom, from(#3d789f), to(#28597a));
-	background: -moz-linear-gradient(top,  #3d789f,  #28597a);
+	background: -webkit-gradient(linear, left top, left bottom, from(#F89022), to(#F89022));
+	background: -moz-linear-gradient(top,  #F89022,  #F89022);
 	color: rgba(255,255,255,.85); 
 }	
 nav ul li a:active, nav ul li a.current {
-	border-top-color: #245779;
+	border-top-color: #6f2479;
 	background: #1b435e;
 	position: relative;
 	top: 1px; 
