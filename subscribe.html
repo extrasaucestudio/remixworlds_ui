@@ -47,7 +47,9 @@
   gtag('config', 'G-XTEM2SY6EK');
 </script>
 
-
+<script>
+  var longStr = '<div id="username" class="className"><center><button id="sign" onclick=sign() >Subscribe</button><br><br><span id="response"></span></center></div>';
+</script>
 </head>
 <body style="background-image: url('files/bg2-plain.png');" align="center">
 <center>
@@ -55,23 +57,41 @@
       
       <img style="display: width: 60px; height: 60px; margin-top: 11px; margin-left: 0px; margin-right: 0px" src="files/images/logo-freecity.png">
       <br>
-      <p>Subscribe to FreeCityGame<br>
+      <div>Subscribe to FreeCityGame
+        <br>
+
         <section id="main">
-        1- Login with your WAX Wallet!
-        <br><br>
-        <img id="login" onclick=login() style="display: block; width: 75px; height: 75px; margin-top: 0px; margin-left: auto; margin-right: auto" src="files/wax.svg">
-      <span id="username"></span>            
+        
+        
+
+        <div id="longStr">
+          <div id="username"><p>1- Login with your WAX Wallet!</p><img id="login" onclick=login() style="display: block; width: 75px; height: 75px; margin-top: 0px; margin-left: auto; margin-right: auto" src="files/wax.svg"><p>Wax Login</p></div>   
+        </div>           
             <br><br>
             
-           
-2- Click to the Subscribe buttons!
-<br><br>
-<button id="sign" onclick=sign() >Subscribe</button><br><br>
+           <script>
+//document.write('');
+//document.write(longStr);            
+//document.write(sessionStorage.getItem('referralurl'));
+            //document.write(document.createElement("<div> my Text </div>"));
+            //document.createElement("<div id='myID'> my Text </div>");
+           </script>
 
-<span id="response"></span>
-</p>
+
+
+      </div>
             
-            
+           <!--
+
+<script>document.getElementById("username").innerHTML = "Hello bitches";</script>
+
+   var longStr = 
+    '<div class="className">\
+        HTML Content\
+    </div>';
+
+
+           --> 
 
 
 </section>
@@ -149,8 +169,13 @@ Quebec enterprise number: (NEQ) 2277160562 Extra Sauce Studio 21 rue de la point
     const message = res.rows[0] ? res.rows[0].message : `<No message is set for ${wax.userAccount}>`;
      // document.getElementById('username').append(wax.userAccount);
     document.getElementById('username').textContent = `Wallet: ${wax.userAccount}`;
+    //document.getElementById('waxbutton').append = document.write(longStr);
+    //sessionStorage.setItem('waxbutton', '<div>aaaa</div>');
+    //document.write(longStr); 
+    // document.createElement("<div id='myID'> my Text </div>");
+    
    // sessionStorage.setItem('username', wax.userAccount) || '';
-   // console.log(sessionStorage.getItem('username'));
+   console.log(document.write(longStr));
    // sessionStorage.setItem('referralurl', `https://play.remixworlds.com/?ref=${wax.userAccount}`) || '<strong>You referral link:</strong><br>https://play.remixworlds.com/?ref=YOUR-WALLET';
   }
 

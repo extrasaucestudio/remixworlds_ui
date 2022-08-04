@@ -184,7 +184,7 @@
   left: 0;
   top: 0;
   background-color: rgb(0,0,0); /* Black fallback color */
-  background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+  background-color: rgba(0,0,0, 0.8); /* Black w/opacity */
   overflow-x: hidden; /* Disable horizontal scroll */
   transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
 }
@@ -298,7 +298,7 @@
   left: 0;
   top: 0;
   background-color: rgb(0,0,0); /* Black fallback color */
-  background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+  background-color: rgba(0,0,0, 0.8); /* Black w/opacity */
   overflow-x: hidden; /* Disable horizontal scroll */
   transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
 }
@@ -349,6 +349,140 @@
 @media screen and (max-height: 450px) {
   .overlay4 a {font-size: 20px}
   .overlay4 .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+} 
+
+/* The overlay5 (background) */
+.overlay5 {
+  /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+  height: 100%;
+  width: 0;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  background-color: rgb(0,0,0); /* Black fallback color */
+  background-color: rgba(0,0,0, 0.7); /* Black w/opacity */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the content inside the overlay */
+.overlay-content5 {
+  position: relative;
+  top: 25%; /* 25% from the top */
+  width: 100%; /* 100% width */
+  text-align: center; /* Centered text/links */
+  margin-top: 140px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+/* The navigation links inside the overlay */
+.overlay5 a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 24px;
+  color: #818181;
+   display: block; /* Display block instead of inline */
+  transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+/* The navigation links inside the overlay */
+.overlay5 span {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #ffffff;
+   display: block; /* Display block instead of inline */
+  transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+/* When you mouse over the navigation links, change their color */
+.overlay5 a:hover, .overlay5 a:focus {
+  color: #f1f1f1;
+}
+
+/* Position the close button (top right corner) */
+.overlay5 .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (max-height: 450px) {
+  .overlay5 a {font-size: 20px}
+  .overlay5 .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+} 
+
+/* The overlay6 (background) */
+.overlay6 {
+  /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+  height: 100%;
+  width: 0;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  background-color: rgb(0,0,0); /* Black fallback color */
+  background-color: rgba(0,0,0, 0.7); /* Black w/opacity */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the content inside the overlay */
+.overlay-content6 {
+  position: relative;
+  top: 25%; /* 25% from the top */
+  width: 100%; /* 100% width */
+  text-align: center; /* Centered text/links */
+  margin-top: 140px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+/* The navigation links inside the overlay */
+.overlay6 a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 24px;
+  color: #818181;
+   display: block; /* Display block instead of inline */
+  transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+/* The navigation links inside the overlay */
+.overlay6 span {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #ffffff;
+   display: block; /* Display block instead of inline */
+  transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+/* When you mouse over the navigation links, change their color */
+.overlay6 a:hover, .overlay6 a:focus {
+  color: #f1f1f1;
+}
+
+/* Position the close button (top right corner) */
+.overlay6 .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (max-height: 450px) {
+  .overlay6 a {font-size: 20px}
+  .overlay6 .closebtn {
     font-size: 40px;
     top: 15px;
     right: 35px;
@@ -465,10 +599,10 @@ neftyblocks-market {
     <div class="overlay-content">
         <div id="main" class="main">
             <script>
-            document.write('<p><a target="iframe" href="subscribe.html?ref=' + ref + '">Subscribe</a>');
+            document.write('<p><a onclick="openNav5()">Subscribe</a>');
             // document.write('<a target="iframe" href="marketplace.html?ref=' + ref + '">Marketplace</a>');
             document.write('<a onclick="openNav3()">Marketplace +</a>');
-            document.write('<a target="iframe" href="claim.html?ref=' + ref + '">Claim RMX</a>');
+            document.write('<a onclick="openNav6()">Claim RMX</a>');
             document.write('<a target="iframe" href="affiliate.html?ref=' + ref + '">Ranking</a>');
             document.write('<a target="iframe" href="docs.html?ref=' + ref + '">Docs</a>');
             document.write('<a target="iframe" href="https://dev.remixworlds.com/?ref=' + ref + '">Blends</a>');
@@ -531,7 +665,81 @@ neftyblocks-market {
   </div>
 
 </div>
-  <!-- Use any element to open/show the overlay navigation menu 
+
+<script>
+  var longStr = '<center><button id="sign" onclick=sign() >Subscribe</button><br><br><span id="response"></span></center>';
+</script>
+
+<!-- The overlay -->
+<div id="myNav5" class="overlay5">
+<span>
+  <!-- Button to close the overlay navigation -->
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav5()">&times;</a>
+
+  <!-- Overlay content -->
+  <div class="overlay-content5">
+ 
+
+    
+    <strong>
+      <div id="username">
+      <strong>#1 Wax Login</strong>
+       
+    </div><br>
+    </strong>
+  <img id="login" onclick=login() style="display: block; width: 75px; height: 75px; margin-top: 0px; margin-left: auto; margin-right: auto" src="files/wax.svg">
+     
+    
+    <p hidden="hidden" id="current"></p>
+  <input hidden="hidden" id="wallet">  
+  </div>
+  <br><hr><br>
+
+  <center><strong>#2 Subscription</strong>
+    <br><br>
+    <img id="sign" onclick=sign() style="display: block; width: 75px; height: 75px; margin-top: 0px; margin-left: auto; margin-right: auto" src="files/images/crown.png">
+<br><span id="response"></span></center>
+</span>
+</div>
+
+<!-- The overlay -->
+<div id="myNav6" class="overlay6">
+  <span>
+    <!-- Button to close the overlay navigation -->
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav6()">&times;</a>
+  
+    <!-- Overlay content -->
+    <div class="overlay-content6">
+   
+  
+      
+      <strong>
+        
+        <div id="username2">
+        <strong>#1 Wax Login</strong>
+         
+      </div><br>
+      </strong>
+    <img id="login" onclick=login() style="display: block; width: 75px; height: 75px; margin-top: 0px; margin-left: auto; margin-right: auto" src="files/wax.svg">
+       
+      
+        
+    </div>
+    <br><hr><br>
+  
+    <center><strong>#2 Claim RMX</strong>
+      <br><br>
+      <img id="sign2" onclick=sign2() style="display: block; width: 75px; height: 75px; margin-top: 0px; margin-left: auto; margin-right: auto" src="files/images/icon-crypto.png">
+      <br><span id="response2"></span></center>
+  </span>
+  </div>
+
+  <!-- 
+    <script>
+      document.write(longStr);
+    </script>
+    
+    Use any element to open/show the overlay navigation menu 
 <span onclick="openNav()">open</span> 
 -->
 
@@ -580,6 +788,248 @@ function closeNav4() {
 document.getElementById("myNav4").style.width = "0%";
 } 
 </script>
+<script>
+  /* Open when someone clicks on the span element */
+function openNav5() {
+document.getElementById("myNav5").style.width = "100%";
+}
+
+/* Close when someone clicks on the "x" symbol inside the overlay */
+function closeNav5() {
+document.getElementById("myNav5").style.width = "0%";
+} 
+</script>
+<script>
+  /* Open when someone clicks on the span element */
+function openNav6() {
+document.getElementById("myNav6").style.width = "100%";
+}
+
+/* Close when someone clicks on the "x" symbol inside the overlay */
+function closeNav6() {
+document.getElementById("myNav6").style.width = "0%";
+} 
+</script>
+
+<script>
+  const wax = new waxjs.WaxJS({
+    rpcEndpoint: 'https://wax.greymass.com'
+  });
+
+  async function login() {
+    try {
+      const userAccount = await wax.login();
+      document.getElementById('wallet').value = userAccount;
+      await getCurrentMessage();
+    } catch(e) {
+      document.getElementById('response').append(e.message);
+    }
+  }
+
+  async function sign() {
+    if(!wax.api) {
+      return document.getElementById('response').append('Login first -- ');
+    }
+
+    const wallet = document.getElementById('wallet').value;
+
+    try {
+      const result = await wax.api.transact({
+        actions: [{
+          account: 'freecitygamx',
+          name: 'adduseraff',
+          authorization: [{
+            actor: wax.userAccount,
+            permission: 'active',
+          }],
+          data: {
+            wallet,
+            affiliate_wallet: ref,
+          },
+        }]
+      }, {
+        blocksBehind: 3,
+        expireSeconds: 30
+      });
+      //document.getElementById('response').append(JSON.stringify(result));
+      //document.getElementById('response').append('Thanks -- ');
+      document.getElementById('response').append(`Subscription Successful, Thank You!`);
+
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      await getCurrentMessage();
+    } catch(e) {
+      document.getElementById('response').append(e.message);
+      document.getElementById('response2').append(e.message);
+    }
+  }
+
+  async function sign2() {
+    if(!wax.api) {
+      return document.getElementById('response').append('Login first -- ');
+    }
+
+    const wallet = document.getElementById('wallet').value;
+
+    try {
+      const result = await wax.api.transact({
+        actions: [{
+          account: 'freecitygamx',
+          name: 'claimstake',
+          authorization: [{
+            actor: wax.userAccount,
+            permission: 'active',
+          }],
+          data: {
+            wallet,
+          },
+        }]
+      }, {
+        blocksBehind: 3,
+        expireSeconds: 30
+      });
+      //document.getElementById('response').append(JSON.stringify(result));
+      //document.getElementById('response').append('Thanks -- ');
+      document.getElementById('response').append(`Claim Successful, Thank You!`);
+
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      await getCurrentMessage();
+    } catch(e) {
+      document.getElementById('response').append(e.message);
+      document.getElementById('response2').append(e.message);
+      //document.getElementById('response3').append(e.message);
+    }
+  }
+  
+
+  async function getCurrentMessage() {
+    const res = await wax.rpc.get_table_rows({
+      json: true,
+      code: 'freecitygamx',
+      scope: 'freecitygamx',
+      table: 'users',
+      lower_bound: wax.userAccount,
+      upper_bound: wax.userAccount,
+    });
+
+    const message = res.rows[0] ? res.rows[0].message : `<No message is set for ${wax.userAccount}>`;
+     // document.getElementById('username').append(wax.userAccount);
+    document.getElementById('username').textContent = `Wallet: ${wax.userAccount}`;
+    document.getElementById('username2').textContent = `Wallet: ${wax.userAccount}`;
+    //document.getElementById('waxbutton').append = document.write(longStr);
+    //sessionStorage.setItem('waxbutton', '<div>aaaa</div>');
+    //document.write(longStr); 
+    // document.createElement("<div id='myID'> my Text </div>");
+    
+   // sessionStorage.setItem('username', wax.userAccount) || '';
+   //console.log(document.write(longStr));
+   // sessionStorage.setItem('referralurl', `https://play.remixworlds.com/?ref=${wax.userAccount}`) || '<strong>You referral link:</strong><br>https://play.remixworlds.com/?ref=YOUR-WALLET';
+  }
+
+  // set a random value to the initial message value
+  document.getElementById('message').value = Math.random().toString(36).substring(2);
+
+</script>
+
+<!--
+<script>
+  const wax = new waxjs.WaxJS({
+    rpcEndpoint: 'https://wax.greymass.com'
+  });
+
+  async function login() {
+    try {
+      const userAccount = await wax.login();
+      document.getElementById('wallet').value = wax.userAccount;
+      
+      await getCurrentMessage();
+    } catch(e) {
+      document.getElementById('response').append(e.message);
+
+    }
+  }
+
+  async function sign() {
+    if(!wax.api) {
+      return document.getElementById('response').append('Login First! ');
+     
+    }
+
+    const wallet = document.getElementById('wallet').value;
+
+    try {
+      const result = await wax.api.transact({
+        actions: [{
+          account: 'freecitygamx',
+          name: 'claimstake',
+          authorization: [{
+            actor: wax.userAccount,
+            permission: 'active',
+          }],
+          data: {
+            wallet,
+          },
+        }]
+      }, {
+        blocksBehind: 3,
+        expireSeconds: 30
+      });
+      
+      document.getElementById('response').append(`Subscription Successful!`);
+      GrowlNotification.notify({
+              title: `Subscription Successful!`,
+              description: `Visit <a href="affiliate.html" target="iframe">Affiliate Listing</a>`,
+              type: 'success',
+              position: 'bottom-right',
+              closeTimeout: 0
+              });
+      //document.getElementById('response4').append(`https://wax.greymass.com/transaction/${result.transaction_id}`);
+      // document.createElement("<div id='myID'> my Text </div>");
+      // document.body.insertBefore(elem,document.body.childNodes[0]);
+      // document.getElementById('response').append(JSON.stringify(result));
+      // console.log(result); 
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      await getCurrentMessage();
+    } catch(e) {
+      document.getElementById('response').append('* Expired Transaction *');
+    }
+  }
+
+    async function getCurrentMessage() {
+    const res = await wax.rpc.get_table_rows({
+      json: true,
+      code: 'freecitygamx',
+      scope: 'freecitygamx',
+      table: 'users',
+      lower_bound: wax.userAccount,
+      upper_bound: wax.userAccount,
+    });
+    
+
+    const message = res.rows[0] ? res.rows[0].message : `Wallet: ${wax.userAccount}`;
+    document.getElementById('current').textContent = message;
+    document.getElementById('current2').textContent = `Wallet: ${wax.userAccount}`;
+    //document.getElementById('current3').textContent = `Your Referral Link`;
+    //document.getElementById('current4').textContent = `https://waxio.io/?ref=${wax.userAccount}`;
+
+    
+
+    //document.getElementById('current5').textContent = ("<p>");
+    //document.getElementById('current5').textContent = ("Subscribe");
+    //document.getElementById('current5').textContent = ("</p>");
+    //document.getElementById('current5').textContent = ("<div id='sign' onclick=sign()>Subscribe</div>");
+    //document.getElementById('current7').textContent = '<p>xxx</p><br>';
+    
+    // document.getElementById('current3').textContent = `Now you are ready to `;
+    //sessionStorage.setItem('waxwallet', wax.userAccount);
+    //console.log(sessionStorage.getItem('waxwallet'));
+    //sessionStorage.setItem('affiliatewallet', ref);
+    //console.log(sessionStorage.getItem('affiliatewallet'));
+  }
+   // set a random value to the initial message value
+  document.getElementById('message').value = Math.random().toString(36).substring(2);
+
+</script>      
+-->
 
          <!--
             <script>
