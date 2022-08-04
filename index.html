@@ -633,6 +633,126 @@ neftyblocks-market {
  margin-left: auto;
  margin-right: auto;
 }
+
+.button {
+  position: relative;
+  background-color: #F89022;
+  border: none;
+  font-size: 28px;
+  color: #FFFFFF;
+  padding: 5px;
+  width: 150px;
+  text-align: center;
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.button:after {
+  content: "";
+  background: #f1f1f1;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s
+}
+
+.button:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+
+.container img {
+  width: 100%;
+  height: auto;
+}
+
+.container .btn {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #F89022;
+  color: black;
+  font-size: 16px;
+  padding: 16px 30px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.container .btn:hover {
+  background-color: black;
+  color: white;
+}
+
+ /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+ .flip-card {
+  background-color: transparent;
+  width: 250;
+  height: 368;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+/* Style the back side */
+.flip-card-back {
+  /* background-color: dodgerblue; */
+  color: rgb(0, 0, 0);
+  transform: rotateY(180deg);
+} 
+
   </style>
      </head> 
         <!--
@@ -757,7 +877,8 @@ neftyblocks-market {
   <center><br><strong>Subscribe</strong>
     <br><br>
     <img id="sign" onclick=sign() style="display: block; width: 75px; height: 75px; margin-top: 0px; margin-left: auto; margin-right: auto" src="files/images/crown.png">
-<br><span id="response"></span></center>
+    <br><button id="sign" onclick=sign() class="button"><span>SUBSCRIBE</span></button>
+    <br><br><span id="response"></span></center>
 </span>
 </div>
 
@@ -778,7 +899,8 @@ neftyblocks-market {
     <center><br><strong>Claim RMX</strong>
       <br><br>
       <img id="sign2" onclick=sign2() style="display: block; width: 75px; height: 75px; margin-top: 0px; margin-left: auto; margin-right: auto" src="files/images/icon-crypto.png">
-      <br><span id="response2"></span></center>
+      <br><button id="sign2" onclick=sign2() class="button"><span>CLAIM</span></button>
+      <br><br><span id="response2"></span></center>
   </span>
   </div>
 
@@ -795,15 +917,38 @@ neftyblocks-market {
           <br><br><img id="login" onclick=login() style="display: block; width: 75px; height: 75px; margin-top: 0px; margin-left: auto; margin-right: auto" src="files/wax.svg">
          <br><hr><br>
         </div>
+        <br>
       </div>
-    <center><br><strong>Buy FreeCity NFT With RMX</strong>
+    <center><strong>Buy FreeCity NFT With RMX</strong>
       <br><br>
-      <img id="sign3" onclick=sign3() style="display: block; width: 75px; height: 75px; margin-top: 0px; margin-left: auto; margin-right: auto" src="files/images/icon-crypto.png">
-      <br><span id="response3"></span></center>
+
+      <div class="container">
+<div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="files/images/nft/vote.png" alt="Vote Card" style="width:100%;height:100%;">
+          </div>
+          <div class="flip-card-back">
+            <br><br>
+            <h1>1 Vote Value</h1>
+            <p></p>
+          </div>
+        </div>
+      </div> 
+
+         <button id="sign3" onclick=sign3() class="btn"><span><img style="display: block; width: 30; height: 30; margin-top: 0px; margin-left: auto; margin-right: auto" src="files/images/icon-nft.png"> BUY<br>1 VOTE CARD<br>100 RMX</span></button>
+
+        
+      </div>
+      <br><br><span id="response3"></span></center>
   </span>
   </div>
 
   <!-- 
+
+<img style="display: block; width: 50%; margin-top: 0px; margin-left: auto; margin-right: auto" src="files/images/nft/vote.png">
+     
+
     <script>
       document.write(longStr);
     </script>
@@ -813,83 +958,7 @@ neftyblocks-market {
 -->
 
   
-<script>
-    /* Open when someone clicks on the span element */
-function openNav() {
-  document.getElementById("myNav").style.width = "100%";
-}
 
-/* Close when someone clicks on the "x" symbol inside the overlay */
-function closeNav() {
-  document.getElementById("myNav").style.width = "0%";
-} 
-</script>
-<script>
-    /* Open when someone clicks on the span element */
-function openNav2() {
-  document.getElementById("myNav2").style.width = "100%";
-}
-
-/* Close when someone clicks on the "x" symbol inside the overlay */
-function closeNav2() {
-  document.getElementById("myNav2").style.width = "0%";
-} 
-</script>
-<script>
-    /* Open when someone clicks on the span element */
-function openNav3() {
-  document.getElementById("myNav3").style.width = "100%";
-}
-
-/* Close when someone clicks on the "x" symbol inside the overlay */
-function closeNav3() {
-  document.getElementById("myNav3").style.width = "0%";
-} 
-</script>
-<script>
-  /* Open when someone clicks on the span element */
-function openNav4() {
-document.getElementById("myNav4").style.width = "100%";
-}
-
-/* Close when someone clicks on the "x" symbol inside the overlay */
-function closeNav4() {
-document.getElementById("myNav4").style.width = "0%";
-} 
-</script>
-<script>
-  /* Open when someone clicks on the span element */
-function openNav5() {
-document.getElementById("myNav5").style.width = "100%";
-}
-
-/* Close when someone clicks on the "x" symbol inside the overlay */
-function closeNav5() {
-document.getElementById("myNav5").style.width = "0%";
-} 
-</script>
-<script>
-  /* Open when someone clicks on the span element */
-function openNav6() {
-document.getElementById("myNav6").style.width = "100%";
-}
-
-/* Close when someone clicks on the "x" symbol inside the overlay */
-function closeNav6() {
-document.getElementById("myNav6").style.width = "0%";
-} 
-</script>
-<script>
-  /* Open when someone clicks on the span element */
-function openNav7() {
-document.getElementById("myNav7").style.width = "100%";
-}
-
-/* Close when someone clicks on the "x" symbol inside the overlay */
-function closeNav7() {
-document.getElementById("myNav7").style.width = "0%";
-} 
-</script>
 
 <script>
   const wax = new waxjs.WaxJS({
@@ -940,8 +1009,8 @@ document.getElementById("myNav7").style.width = "0%";
       await getCurrentMessage();
     } catch(e) {
       document.getElementById('response').append(e.message);
-      document.getElementById('response2').append(e.message);
-      document.getElementById('response3').append(e.message);
+     // document.getElementById('response2').append(e.message);
+      //document.getElementById('response3').append(e.message);
     }
   }
 
@@ -972,21 +1041,21 @@ document.getElementById("myNav7").style.width = "0%";
       });
       //document.getElementById('response').append(JSON.stringify(result));
       //document.getElementById('response').append('Thanks -- ');
-      document.getElementById('response').append(`Claim Successful, Thank You! `);
+      document.getElementById('response2').append(`Claim Successful, Thank You! `);
 
       await new Promise(resolve => setTimeout(resolve, 1000));
       await getCurrentMessage();
     } catch(e) {
-      document.getElementById('response').append(e.message);
       document.getElementById('response2').append(e.message);
-      document.getElementById('response3').append(e.message);
+      //document.getElementById('response2').append(e.message);
+      //document.getElementById('response3').append(e.message);
       //document.getElementById('response3').append(e.message);
     }
   }
 
   async function sign3() {
     if(!wax.api) {
-      return document.getElementById('response').append('Login first! ');
+      return document.getElementById('response3').append('Login first! ');
       
     }
 
@@ -1002,9 +1071,9 @@ document.getElementById("myNav7").style.width = "0%";
             permission: 'active',
           }],
           data: {
-            from: 'kkere.wam',
+            from: wallet,
             to: 'freecitygamx',
-            quantity: '100.000000000 RMX',
+            quantity: '100.00000000 RMX',
             memo: 'purchase::350620',
           },
         }]
@@ -1014,14 +1083,14 @@ document.getElementById("myNav7").style.width = "0%";
       });
       //document.getElementById('response').append(JSON.stringify(result));
       //document.getElementById('response').append('Thanks -- ');
-      document.getElementById('response').append(`Buy Successful, Thank You! `);
+      document.getElementById('response3').append(`Buy Successful, Thank You! `);
 
       await new Promise(resolve => setTimeout(resolve, 1000));
       await getCurrentMessage();
     } catch(e) {
-      document.getElementById('response').append(e.message);
-      document.getElementById('response2').append(e.message);
       document.getElementById('response3').append(e.message);
+      //document.getElementById('response2').append(e.message);
+      //document.getElementById('response3').append(e.message);
     }
   }
 
@@ -1040,9 +1109,9 @@ document.getElementById("myNav7").style.width = "0%";
     document.getElementById('username').textContent = `Wallet: ${wax.userAccount}`;
     document.getElementById('username2').textContent = `Wallet: ${wax.userAccount}`;
     document.getElementById('username3').textContent = `Wallet: ${wax.userAccount}`;
-    document.getElementById('response').append(`Login Successful! `);
-    document.getElementById('response2').append(`Login Successful! `);
-    document.getElementById('response3').append(`Login Successful! `);
+    //document.getElementById('response').append(`Login Successful! `);
+    //document.getElementById('response2').append(`Login Successful! `);
+    //document.getElementById('response3').append(`Login Successful! `);
     //document.getElementById('waxbutton').append = document.write(longStr);
     //sessionStorage.setItem('waxbutton', '<div>aaaa</div>');
     //document.write(longStr); 
@@ -1168,6 +1237,83 @@ document.getElementById("myNav7").style.width = "0%";
       }, blink_speed);
       </script>     
     -->
+    <script>
+      /* Open when someone clicks on the span element */
+  function openNav() {
+    document.getElementById("myNav").style.width = "100%";
+  }
+  
+  /* Close when someone clicks on the "x" symbol inside the overlay */
+  function closeNav() {
+    document.getElementById("myNav").style.width = "0%";
+  } 
+  </script>
+  <script>
+      /* Open when someone clicks on the span element */
+  function openNav2() {
+    document.getElementById("myNav2").style.width = "100%";
+  }
+  
+  /* Close when someone clicks on the "x" symbol inside the overlay */
+  function closeNav2() {
+    document.getElementById("myNav2").style.width = "0%";
+  } 
+  </script>
+  <script>
+      /* Open when someone clicks on the span element */
+  function openNav3() {
+    document.getElementById("myNav3").style.width = "100%";
+  }
+  
+  /* Close when someone clicks on the "x" symbol inside the overlay */
+  function closeNav3() {
+    document.getElementById("myNav3").style.width = "0%";
+  } 
+  </script>
+  <script>
+    /* Open when someone clicks on the span element */
+  function openNav4() {
+  document.getElementById("myNav4").style.width = "100%";
+  }
+  
+  /* Close when someone clicks on the "x" symbol inside the overlay */
+  function closeNav4() {
+  document.getElementById("myNav4").style.width = "0%";
+  } 
+  </script>
+  <script>
+    /* Open when someone clicks on the span element */
+  function openNav5() {
+  document.getElementById("myNav5").style.width = "100%";
+  }
+  
+  /* Close when someone clicks on the "x" symbol inside the overlay */
+  function closeNav5() {
+  document.getElementById("myNav5").style.width = "0%";
+  } 
+  </script>
+  <script>
+    /* Open when someone clicks on the span element */
+  function openNav6() {
+  document.getElementById("myNav6").style.width = "100%";
+  }
+  
+  /* Close when someone clicks on the "x" symbol inside the overlay */
+  function closeNav6() {
+  document.getElementById("myNav6").style.width = "0%";
+  } 
+  </script>
+  <script>
+    /* Open when someone clicks on the span element */
+  function openNav7() {
+  document.getElementById("myNav7").style.width = "100%";
+  }
+  
+  /* Close when someone clicks on the "x" symbol inside the overlay */
+  function closeNav7() {
+  document.getElementById("myNav7").style.width = "0%";
+  } 
+  </script>
 
     </body>
 </html>
