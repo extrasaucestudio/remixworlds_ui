@@ -828,7 +828,7 @@ document.getElementById("myNav6").style.width = "0%";
 
   async function sign() {
     if(!wax.api) {
-      return document.getElementById('response').append('Login first -- ');
+      return document.getElementById('response').append('Login first! ');
     }
 
     const wallet = document.getElementById('wallet').value;
@@ -853,7 +853,7 @@ document.getElementById("myNav6").style.width = "0%";
       });
       //document.getElementById('response').append(JSON.stringify(result));
       //document.getElementById('response').append('Thanks -- ');
-      document.getElementById('response').append(`Subscription Successful, Thank You!`);
+      document.getElementById('response').append(`Subscription Successful, Thank You! `);
 
       await new Promise(resolve => setTimeout(resolve, 1000));
       await getCurrentMessage();
@@ -865,7 +865,7 @@ document.getElementById("myNav6").style.width = "0%";
 
   async function sign2() {
     if(!wax.api) {
-      return document.getElementById('response').append('Login first -- ');
+      return document.getElementById('response').append('Login first! ');
     }
 
     const wallet = document.getElementById('wallet').value;
@@ -889,7 +889,7 @@ document.getElementById("myNav6").style.width = "0%";
       });
       //document.getElementById('response').append(JSON.stringify(result));
       //document.getElementById('response').append('Thanks -- ');
-      document.getElementById('response').append(`Claim Successful, Thank You!`);
+      document.getElementById('response').append(`Claim Successful, Thank You! `);
 
       await new Promise(resolve => setTimeout(resolve, 1000));
       await getCurrentMessage();
@@ -899,7 +899,6 @@ document.getElementById("myNav6").style.width = "0%";
       //document.getElementById('response3').append(e.message);
     }
   }
-  
 
   async function getCurrentMessage() {
     const res = await wax.rpc.get_table_rows({
@@ -915,6 +914,8 @@ document.getElementById("myNav6").style.width = "0%";
      // document.getElementById('username').append(wax.userAccount);
     document.getElementById('username').textContent = `Wallet: ${wax.userAccount}`;
     document.getElementById('username2').textContent = `Wallet: ${wax.userAccount}`;
+    document.getElementById('response').append(`Login Successful! `);
+    document.getElementById('response2').append(`Login Successful! `);
     //document.getElementById('waxbutton').append = document.write(longStr);
     //sessionStorage.setItem('waxbutton', '<div>aaaa</div>');
     //document.write(longStr); 
