@@ -507,7 +507,7 @@
 /* Position the content inside the overlay */
 .overlay-content7 {
   position: relative;
-  top: 25%; /* 25% from the top */
+  top: 0%; /* 25% from the top */
   width: 100%; /* 100% width */
   text-align: center; /* Centered text/links */
   margin-top: 140px; /* 30px top margin to avoid conflict with the close button on smaller screens */
@@ -551,7 +551,7 @@
   .overlay7 a {font-size: 20px}
   .overlay7 .closebtn {
     font-size: 40px;
-    top: 15px;
+    top: 5px;
     right: 35px;
   }
 } 
@@ -641,7 +641,7 @@ neftyblocks-market {
   font-size: 28px;
   color: #FFFFFF;
   padding: 5px;
-  width: 150px;
+  width: 125px;
   text-align: center;
   transition-duration: 0.4s;
   text-decoration: none;
@@ -688,7 +688,7 @@ neftyblocks-market {
 
 .container .btn {
   position: absolute;
-  top: 75%;
+  top: 70%;
   left: 50%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
@@ -940,10 +940,17 @@ text-decoration-color: #ffffff;
             <img src="files/images/freecitygame_vote.png" alt="Card" style="width:100%;height:100%;">
           </div>
           <div class="flip-card-back">
-            <table style="display: block; margin-top: 15px; margin-left: auto; margin-right: auto">
+            <table style="display: block; margin-top: 30; margin-left: 5px; margin-right: auto">
+             <tr>
+              <span>Vote Card</span>
+             </tr>
               <tr>
                 <th><span>1</span></th>
-                <th><img src="files/images/online-voting.png" alt="Vote Value" style="display: block; width: 45; height: 45; margin-top: 0px; margin-left: auto; margin-right: auto"></th>
+                <th><img src="files/images/online-voting.png" alt="Vote Value" style="display: block; width: 40; height: 40; margin-top: 0px; margin-left: auto; margin-right: auto"></th>
+              </tr>
+              <tr>
+                <th><span>100 RMX</span></th>
+                <th><img src="files/images/icon-crypto.png" alt="RMX Token" style="display: block; width: 40; height: 40; margin-top: 0px; margin-left: auto; margin-right: auto"></th>
               </tr>
             </table>
             
@@ -952,7 +959,7 @@ text-decoration-color: #ffffff;
         </div>
       </div> 
 
-         <button id="sign3" onclick=sign3() class="btn"><span><img style="display: block; width: 30; height: 30; margin-top: 0px; margin-left: auto; margin-right: auto" src="files/images/marketplace.png"> BUY<br>1 VOTE CARD<br>100 RMX</span></button>
+<button id="sign3" onclick=sign3() class="btn"><span>BUY<br><img style="display: block; width: 30; height: 30; margin-top: 0px; margin-left: auto; margin-right: auto" src="files/images/marketplace.png">100 RMX</span></button>
 
         
       </div>
