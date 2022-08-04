@@ -710,8 +710,8 @@ neftyblocks-market {
  /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
  .flip-card {
   background-color: transparent;
-  width: 250;
-  height: 368;
+  width: 275;
+  height: 404;
   border: 1px solid #f1f1f1;
   perspective: 1000px; /* Remove this if you don't want the 3D effect */
 }
@@ -749,9 +749,19 @@ neftyblocks-market {
 /* Style the back side */
 .flip-card-back {
 /*  background-color: dodgerblue; */
-  background-image: url('files/bg2-plain.png');
-  color: white;
+  background-image: url('files/images/nftcard-back.png');
+  text-decoration-color: #ffffff;
+  color: #ffffff;
   transform: rotateY(180deg);
+} 
+
+/* Style the back side */
+.flip-card-back p {
+font-size: 36px;
+/* text-font:var(--nefty-bg-card) */
+color:#ffffff;
+text-decoration-color: #ffffff;
+
 } 
 
   </style>
@@ -927,17 +937,22 @@ neftyblocks-market {
 <div class="flip-card">
         <div class="flip-card-inner">
           <div class="flip-card-front">
-            <img src="files/images/nft/vote.png" alt="Vote Card" style="width:100%;height:100%;">
+            <img src="files/images/freecitygame_vote.png" alt="Card" style="width:100%;height:100%;">
           </div>
           <div class="flip-card-back">
-            <br><br>
-            <h1>1 Vote Value</h1>
-            <p></p>
+            <table style="display: block; margin-top: 15px; margin-left: auto; margin-right: auto">
+              <tr>
+                <th><span>1</span></th>
+                <th><img src="files/images/online-voting.png" alt="Vote Value" style="display: block; width: 45; height: 45; margin-top: 0px; margin-left: auto; margin-right: auto"></th>
+              </tr>
+            </table>
+            
+
           </div>
         </div>
       </div> 
 
-         <button id="sign3" onclick=sign3() class="btn"><span><img style="display: block; width: 30; height: 30; margin-top: 0px; margin-left: auto; margin-right: auto" src="files/images/icon-nft.png"> BUY<br>1 VOTE CARD<br>100 RMX</span></button>
+         <button id="sign3" onclick=sign3() class="btn"><span><img style="display: block; width: 30; height: 30; margin-top: 0px; margin-left: auto; margin-right: auto" src="files/images/marketplace.png"> BUY<br>1 VOTE CARD<br>100 RMX</span></button>
 
         
       </div>
