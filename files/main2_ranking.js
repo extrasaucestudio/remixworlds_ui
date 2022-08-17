@@ -98,7 +98,7 @@ function getProducers() {
         sorted.map((prod, i) => `
         <tr class="prod-row">
             <td>${i+1}</td>
-            <td>${prod.wallet}</td>
+            <td><a target="iframe" href="https://eosauthority.com/account/${prod.wallet}?network=wax">${prod.wallet}</a></td>
             <td>${prod.total_vote}</td>
             <td>${prod.next_reward}</td>
         </tr>
