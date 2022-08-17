@@ -774,6 +774,22 @@ text-decoration-color: #ffffff;
 
 } 
 
+.container-image {
+  position: relative;
+  max-width: 800px; /* Maximum width */
+  margin: 0 auto; /* Center it */
+}
+
+.container-image .content {
+  position: absolute; /* Position the background text */
+  bottom: 0; /* At the bottom. Use top:0 to append it to the top */
+  background: rgb(0, 0, 0); /* Fallback color */
+  background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+  color: #f1f1f1; /* Grey text */
+  width: 100%; /* Full width */
+  padding: 20px; /* Some padding */
+}
+
   </style>
      </head> 
         <!--
@@ -889,7 +905,7 @@ text-decoration-color: #ffffff;
         <script type="module" src="https://cdn.jsdelivr.net/npm/@neftyblocks/market@latest"></script>
     </div>
   </div>
-<div id="container">
+
 <!-- The overlay -->
  <div id="myNav4" class="overlay4">
 
@@ -898,21 +914,19 @@ text-decoration-color: #ffffff;
 
   <!-- Overlay content -->
   <div class="overlay-content4">
-    <p><strong>WAX Waxio DashBoard</strong>
-      <br><br>
-      WAX Gaming Dashboard to manage multiple<br>game and dApp on the same time.<br>This tool is free and only on desktop.
-      <br>
-      <img style="display: width: 60px; height: 80%" src="files/waxioio.png">
-      <br><br>
-      <a target="iframe" href="https://waxio.io/?ref=freecitygame">See Waxio.io</a>
+    
+      <div class="container-image">
+        <img src="files/waxioio.png" alt="Waxio" style="width:100%;">
+        <div class="content">
+          <strong>WAX Waxio DashBoard</strong>
+          <p>WAX Gaming Dashboard to manage multiple<br>game and dApp on the same time.<br>This tool is free and only on desktop.</p>
+        </div>
+      </div>
+      <p>
+        <a target="iframe" href="https://waxio.io/?ref=freecitygame">See Waxio.io</a>
     </p>
   </div>
-
 </div>
-</div>
-
-  
-
 <script>
   var longStr = '<center><button id="sign" onclick=sign() >Subscribe</button><br><br><span id="response"></span></center>';
 </script>
