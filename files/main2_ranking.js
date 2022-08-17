@@ -97,11 +97,11 @@ function getProducers() {
         var sorted = resp.rows.sort((a,b) => Number(a.total_vote) > Number(b.total_vote) ? -1:1);
         sorted.map((prod, i) => `
         <tr class="prod-row">
-            <td>${i+1}</td>
-            <td><a target="iframe" href="https://eosauthority.com/account/${prod.wallet}?network=wax">${prod.wallet}</a></td>
+            <td>${i+1}<br><br>Referrer: </td>
+            <td><a target="iframe" href="https://eosauthority.com/account/${prod.wallet}?network=wax">${prod.wallet}</a><br><br><a target="iframe" href="https://eosauthority.com/account/${prod.affiliate_wallet}?network=wax">${prod.affiliate_wallet}</a></td>
             <td>${prod.total_vote}</td>
             <td>${prod.next_reward}</td>
-            <td><a target="iframe" href="https://eosauthority.com/account/${prod.affiliate_wallet}?network=wax">${prod.affiliate_wallet}</a></td>
+
         </tr>
         `)
         .forEach(row => tbody.innerHTML += row);
