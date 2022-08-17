@@ -101,6 +101,7 @@ function getProducers() {
             <td><a target="iframe" href="https://eosauthority.com/account/${prod.wallet}?network=wax">${prod.wallet}</a></td>
             <td>${prod.total_vote}</td>
             <td>${prod.next_reward}</td>
+            <td><a target="iframe" href="https://eosauthority.com/account/${prod.affiliate_wallet}?network=wax">${prod.affiliate_wallet}</a></td>
         </tr>
         `)
         .forEach(row => tbody.innerHTML += row);
