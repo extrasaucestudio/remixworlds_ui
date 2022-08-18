@@ -566,6 +566,63 @@
   }
 } 
 
+/* The Overlay8 (background) */
+.overlay8 {
+  /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+  height: 100%;
+  width: 0;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  background-color: rgb(0,0,0); /* Black fallback color */
+  background-color: rgba(0,0,0, 0.0); /* Black w/opacity */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the content inside the overlay */
+.overlay-content8 {
+  position: relative;
+  top: 0%; /* 25% from the top */
+  width: 100%; /* 100% width */
+  text-align: center; /* Centered text/links */
+  margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+/* The navigation links inside the overlay */
+.overlay8 a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block; /* Display block instead of inline */
+  transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+/* When you mouse over the navigation links, change their color */
+.overlay8 a:hover, .overlay8 a:focus {
+  color: #f1f1f1;
+}
+
+/* Position the close button (top right corner) */
+.overlay8 .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 43.5px;
+  font-size: 60px;
+}
+
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (max-height: 450px) {
+  .overlay8 a {font-size: 20px}
+  .overlay8 .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+} 
+
 :root {
     /* the font-family for all text */
     --nefty-font-family: sans-serif;
@@ -640,6 +697,13 @@
 neftyblocks-market {
  align: center;
  width: 95%;
+ margin-left: auto;
+ margin-right: auto;
+}
+
+neftyblocks-drops {
+ align: center;
+ width: 85%;
  margin-left: auto;
  margin-right: auto;
 }
@@ -830,6 +894,10 @@ text-decoration-color: #ffffff;
             <th><a onclick="openNav3()">Marketplace +</a></th>
           </tr>
           <tr>
+            <th><img style="display: width: 50px; height: 50px" src="files/images/marketplace.png"></th>
+            <th><a onclick="openNav8()">Drops +</a></th>
+          </tr>
+          <tr>
             <th><img style="display: width: 45px; height: 45px" src="files/images/icon-crypto.png"></th>
             <th><a onclick="openNav6()">Claim RMX</a></th>
           </tr>
@@ -871,7 +939,7 @@ text-decoration-color: #ffffff;
 
 
 
-  <!-- The overlay -->
+  <!-- The overlay2 -->
  <div id="myNav2" class="overlay2">
 
     <!-- Button to close the overlay navigation -->
@@ -914,7 +982,7 @@ text-decoration-color: #ffffff;
   
   </div>
 
-   <!-- The overlay -->
+   <!-- The overlay3 -->
  <div id="myNav3" class="overlay3">
     <!-- Button to close the overlay navigation -->
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav3()">&times;</a>
@@ -926,7 +994,19 @@ text-decoration-color: #ffffff;
     </div>
   </div>
 
-<!-- The overlay -->
+  <!-- The overlay8 -->
+ <div id="myNav8" class="overlay8">
+  <!-- Button to close the overlay navigation -->
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav3()">&times;</a>
+  <center><img style="display: width: 60px; height: 60px; margin-top: 15px; margin-left: 0px; margin-right: 0px" src="files/images/logo-freecity.png"></center>
+  <!-- Overlay content -->
+  <div class="overlay-content8">
+      <neftyblocks-drops collection="freecitygame"></neftyblocks-drops>
+      <script type="module" src="https://cdn.jsdelivr.net/npm/@neftyblocks/drops@latest"></script>
+  </div>
+</div>
+
+<!-- The overlay4 -->
  <div id="myNav4" class="overlay4">
 
   <!-- Button to close the overlay navigation -->
@@ -1423,6 +1503,17 @@ text-decoration-color: #ffffff;
   document.getElementById("myNav7").style.width = "0%";
   } 
   </script>
+    <script>
+      /* Open when someone clicks on the span element */
+    function openNav8() {
+    document.getElementById("myNav8").style.width = "100%";
+    }
+    
+    /* Close when someone clicks on the "x" symbol inside the overlay */
+    function closeNav8() {
+    document.getElementById("myNav8").style.width = "0%";
+    } 
+    </script>
 
     </body>
 </html>
